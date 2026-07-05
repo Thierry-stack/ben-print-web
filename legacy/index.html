@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fresh Print — More than just ink on paper. Professional printing services for business cards, banners, flyers, and custom apparel.">
+  <title>Fresh Print | More Than Just Ink On Paper</title>
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/icon.png" alt="" class="nav__logo-icon" width="44" height="44" fetchpriority="high">
+        <span class="nav__logo-text">
+          <span class="nav__logo-name">Fresh Print</span>
+          <span class="nav__logo-tagline">More than just ink on paper</span>
+        </span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="nav__link" data-nav="home">Home</a></li>
+        <li><a href="services.html" class="nav__link" data-nav="services">Services</a></li>
+        <li><a href="about.html" class="nav__link" data-nav="about">About</a></li>
+        <li><a href="blog.html" class="nav__link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav__link" data-nav="contact">Contact</a></li>
+        <li><a href="contact.html#quote" class="nav__link nav__link--cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__bg">
+        <div class="hero__blob hero__blob--1"></div>
+        <div class="hero__blob hero__blob--2"></div>
+        <div class="hero__blob hero__blob--3"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Professional Printing Solutions</p>
+          <h1 class="hero__title">
+            Bring Your Ideas<br>
+            <span class="hero__title-accent">To Life in Print</span>
+          </h1>
+          <p class="hero__desc">
+            From business cards to large-format banners — Fresh Print delivers
+            vibrant, high-quality results. More than just ink on paper.
+          </p>
+          <div class="hero__actions">
+            <a href="contact.html#quote" class="btn btn--primary">Start Your Project</a>
+            <a href="services.html" class="btn btn--outline">View Services</a>
+          </div>
+        </div>
+
+        <div class="tabs-showcase">
+          <div class="tabs-showcase__header">
+            <div class="tabs-nav" id="tabsNav" role="tablist">
+              <div class="tabs-nav__indicator" id="tabIndicator"></div>
+              <button class="tabs-nav__btn active" role="tab" data-tab="0" aria-selected="true">Business Cards</button>
+              <button class="tabs-nav__btn" role="tab" data-tab="1" aria-selected="false">Banners</button>
+              <button class="tabs-nav__btn" role="tab" data-tab="2" aria-selected="false">Flyers</button>
+              <button class="tabs-nav__btn" role="tab" data-tab="3" aria-selected="false">Apparel</button>
+            </div>
+          </div>
+
+          <div class="tabs-panels" id="tabsPanels">
+            <div class="tabs-panel active" data-panel="0" role="tabpanel">
+              <div class="tabs-panel__visual tabs-panel__visual--cards">
+                <div class="print-card print-card--1"></div>
+                <div class="print-card print-card--2"></div>
+              </div>
+              <div class="tabs-panel__info">
+                <h3>Premium Business Cards</h3>
+                <p>Matte, gloss, or textured finishes. Make a lasting first impression.</p>
+                <span class="tabs-panel__tag">From $29 / 500</span>
+              </div>
+            </div>
+
+            <div class="tabs-panel" data-panel="1" role="tabpanel">
+              <div class="tabs-panel__visual tabs-panel__visual--banners">
+                <div class="print-banner"></div>
+              </div>
+              <div class="tabs-panel__info">
+                <h3>Large Format Banners</h3>
+                <p>Indoor & outdoor vinyl banners built to withstand the elements.</p>
+                <span class="tabs-panel__tag">Custom sizes available</span>
+              </div>
+            </div>
+
+            <div class="tabs-panel" data-panel="2" role="tabpanel">
+              <div class="tabs-panel__visual tabs-panel__visual--flyers">
+                <div class="print-flyer print-flyer--1"></div>
+                <div class="print-flyer print-flyer--2"></div>
+                <div class="print-flyer print-flyer--3"></div>
+              </div>
+              <div class="tabs-panel__info">
+                <h3>Flyers & Brochures</h3>
+                <p>Full-color marketing materials that grab attention and drive action.</p>
+                <span class="tabs-panel__tag">Same-day rush available</span>
+              </div>
+            </div>
+
+            <div class="tabs-panel" data-panel="3" role="tabpanel">
+              <div class="tabs-panel__visual tabs-panel__visual--apparel">
+                <div class="print-shirt"></div>
+              </div>
+              <div class="tabs-panel__info">
+                <h3>Custom Apparel</h3>
+                <p>Screen printing & embroidery for teams, events, and brands.</p>
+                <span class="tabs-panel__tag">Bulk discounts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabs-progress">
+            <div class="tabs-progress__bar" id="tabProgress"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat">
+          <span class="stat__num">10K+</span>
+          <span class="stat__label">Projects Delivered</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">24hr</span>
+          <span class="stat__label">Rush Turnaround</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">100%</span>
+          <span class="stat__label">Satisfaction Guarantee</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">15+</span>
+          <span class="stat__label">Years Experience</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-links">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Explore</p>
+          <h2 class="section-header__title">Everything You Need</h2>
+        </div>
+        <div class="home-links__grid">
+          <a href="services.html" class="home-link-card">
+            <div class="home-link-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </div>
+            <h3>Services</h3>
+            <p>Business cards, banners, flyers & more</p>
+          </a>
+          <a href="about.html" class="home-link-card">
+            <div class="home-link-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </div>
+            <h3>About Us</h3>
+            <p>Our story & commitment to quality</p>
+          </a>
+          <a href="blog.html" class="home-link-card">
+            <div class="home-link-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3>Blog</h3>
+            <p>Tips, trends & printing insights</p>
+          </a>
+          <a href="contact.html" class="home-link-card">
+            <div class="home-link-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3>Contact</h3>
+            <p>Get in touch for a free quote</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container">
+        <h2>Ready to Start Printing?</h2>
+        <p>Get a free quote within 24 hours. No obligation.</p>
+        <a href="contact.html#quote" class="btn btn--outline">Get a Free Quote</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="Fresh Print" width="140" loading="lazy">
+        <p>More than just ink on paper.</p>
+      </div>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer__copy">&copy; 2026 Fresh Print. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
