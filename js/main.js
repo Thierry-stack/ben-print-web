@@ -104,6 +104,53 @@
 
   initSiteTickers();
 
+  // ---- Welcome slide floating shapes (home only) ----
+  const WELCOME_SHAPE_DELAYS = [0.3, 0.5, 0.4, 0.6, 0.7];
+  let welcomeShapesEntranceDone = false;
+
+  function restartCssAnimation(el) {
+    if (!el) return;
+    el.style.animation = 'none';
+    void el.offsetHeight;
+    el.style.animation = '';
+  }
+
+  function startWelcomeShapeEntrance(shape, delay) {
+    shape.classList.remove('is-floating', 'is-entered');
+    restartCssAnimation(shape);
+    restartCssAnimation(shape.querySelector('.hero-shape__inner'));
+
+    shape.style.animation = `shapeEnter 2.4s cubic-bezier(0.23, 0.86, 0.39, 0.96) ${delay}s forwards`;
+
+    const onEnterEnd = (event) => {
+      if (event.animationName !== 'shapeEnter') return;
+      shape.removeEventListener('animationend', onEnterEnd);
+      shape.style.animation = '';
+      shape.classList.add('is-entered', 'is-floating');
+    };
+
+    shape.addEventListener('animationend', onEnterEnd);
+  }
+
+  function activateWelcomeShapes() {
+    const shapes = document.querySelectorAll('.hero-shapes .hero-shape');
+    if (!shapes.length) return;
+
+    if (!welcomeShapesEntranceDone) {
+      welcomeShapesEntranceDone = true;
+      shapes.forEach((shape, index) => {
+        startWelcomeShapeEntrance(shape, WELCOME_SHAPE_DELAYS[index] || 0);
+      });
+      return;
+    }
+
+    shapes.forEach((shape) => {
+      shape.classList.add('is-entered', 'is-floating');
+      restartCssAnimation(shape);
+      restartCssAnimation(shape.querySelector('.hero-shape__inner'));
+    });
+  }
+
   // ---- Active page in nav ----
   const currentPage = document.body.dataset.page;
   if (currentPage) {
@@ -140,6 +187,10 @@
       label.classList.toggle('active', isActive);
       label.setAttribute('aria-selected', isActive);
     });
+
+    if (currentSlide === 0) {
+      activateWelcomeShapes();
+    }
 
     resetProgress();
   }

@@ -406,11 +406,24 @@ ul { list-style: none; }
 
 .hero-shapes__ambient {
   position: absolute;
-  inset: 0;
+  inset: -10%;
   background:
     radial-gradient(ellipse at 15% 20%, rgba(56, 161, 105, 0.16), transparent 58%),
     radial-gradient(ellipse at 85% 75%, rgba(246, 224, 94, 0.18), transparent 58%);
   filter: blur(40px);
+  animation: ambientDrift 28s ease-in-out infinite;
+}
+
+@keyframes ambientDrift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(2%, -2%) scale(1.04);
+  }
+  66% {
+    transform: translate(-2%, 2%) scale(1.02);
+  }
 }
 
 .hero-shapes__vignette {
@@ -429,7 +442,17 @@ ul { list-style: none; }
   position: absolute;
   opacity: 0;
   transform: translateY(-150px);
-  animation: shapeEnter 2.4s cubic-bezier(0.23, 0.86, 0.39, 0.96) forwards;
+  will-change: transform, opacity;
+}
+
+.hero-shape.is-entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-shape.is-floating {
+  animation: var(--shape-drift) var(--shape-drift-duration, 18s) ease-in-out infinite;
+  animation-delay: var(--shape-drift-delay, 0s);
 }
 
 .hero-shape__inner {
@@ -441,7 +464,7 @@ ul { list-style: none; }
   box-shadow:
     0 8px 32px rgba(26, 107, 60, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  animation: shapeFloat 12s ease-in-out infinite;
+  will-change: transform;
 }
 
 .hero-shape__inner::after {
@@ -456,67 +479,71 @@ ul { list-style: none; }
 .hero-shape--1 {
   left: -10%;
   top: 15%;
-  animation-delay: 0.3s;
-  --shape-rotate: 12deg;
+  --shape-drift: shapeDrift1;
+  --shape-drift-duration: 18s;
+  --shape-drift-delay: 0s;
 }
 
 .hero-shape--1 .hero-shape__inner {
   width: min(600px, 85vw);
   height: 140px;
   background: linear-gradient(to right, rgba(56, 161, 105, 0.42), rgba(56, 161, 105, 0.08) 70%, transparent);
-  transform: rotate(12deg);
 }
 
 .hero-shape--2 {
   right: -5%;
   top: 70%;
-  animation-delay: 0.5s;
+  --shape-drift: shapeDrift2;
+  --shape-drift-duration: 22s;
+  --shape-drift-delay: -4s;
 }
 
 .hero-shape--2 .hero-shape__inner {
   width: min(500px, 75vw);
   height: 120px;
   background: linear-gradient(to right, rgba(154, 230, 92, 0.48), rgba(154, 230, 92, 0.1) 70%, transparent);
-  transform: rotate(-15deg);
 }
 
 .hero-shape--3 {
   bottom: 5%;
   left: 5%;
-  animation-delay: 0.4s;
+  --shape-drift: shapeDrift3;
+  --shape-drift-duration: 20s;
+  --shape-drift-delay: -8s;
 }
 
 .hero-shape--3 .hero-shape__inner {
   width: min(300px, 55vw);
   height: 80px;
   background: linear-gradient(to right, rgba(26, 107, 60, 0.38), rgba(26, 107, 60, 0.08) 70%, transparent);
-  transform: rotate(-8deg);
 }
 
 .hero-shape--4 {
   right: 15%;
   top: 10%;
-  animation-delay: 0.6s;
+  --shape-drift: shapeDrift4;
+  --shape-drift-duration: 16s;
+  --shape-drift-delay: -2s;
 }
 
 .hero-shape--4 .hero-shape__inner {
   width: min(200px, 40vw);
   height: 60px;
   background: linear-gradient(to right, rgba(246, 224, 94, 0.55), rgba(246, 224, 94, 0.12) 70%, transparent);
-  transform: rotate(20deg);
 }
 
 .hero-shape--5 {
   left: 20%;
   top: 5%;
-  animation-delay: 0.7s;
+  --shape-drift: shapeDrift5;
+  --shape-drift-duration: 24s;
+  --shape-drift-delay: -6s;
 }
 
 .hero-shape--5 .hero-shape__inner {
   width: min(150px, 32vw);
   height: 40px;
   background: linear-gradient(to right, rgba(104, 211, 145, 0.45), rgba(104, 211, 145, 0.1) 70%, transparent);
-  transform: rotate(-25deg);
 }
 
 @keyframes shapeEnter {
@@ -533,41 +560,75 @@ ul { list-style: none; }
   }
 }
 
-@keyframes shapeFloat {
-  0%, 100% { transform: translateY(0) rotate(var(--shape-rotate, 0deg)); }
-  50% { transform: translateY(15px) rotate(var(--shape-rotate, 0deg)); }
+@keyframes shapeDrift1 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(18px, -28px); }
+  50% { transform: translate(-12px, 24px); }
+  75% { transform: translate(22px, 12px); }
 }
 
-.hero-shape--1 .hero-shape__inner { --shape-rotate: 12deg; animation: shapeFloat1 12s ease-in-out infinite; }
-.hero-shape--2 .hero-shape__inner { animation: shapeFloat2 12s ease-in-out infinite; }
-.hero-shape--3 .hero-shape__inner { animation: shapeFloat3 12s ease-in-out infinite; }
-.hero-shape--4 .hero-shape__inner { animation: shapeFloat4 12s ease-in-out infinite; }
-.hero-shape--5 .hero-shape__inner { animation: shapeFloat5 12s ease-in-out infinite; }
-
-@keyframes shapeFloat1 {
-  0%, 100% { transform: translateY(0) rotate(12deg); }
-  50% { transform: translateY(15px) rotate(12deg); }
+@keyframes shapeDrift2 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-20px, 20px); }
+  50% { transform: translate(14px, -26px); }
+  75% { transform: translate(-16px, -10px); }
 }
 
-@keyframes shapeFloat2 {
-  0%, 100% { transform: translateY(0) rotate(-15deg); }
-  50% { transform: translateY(15px) rotate(-15deg); }
+@keyframes shapeDrift3 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(15px, 22px); }
+  66% { transform: translate(-18px, -18px); }
 }
 
-@keyframes shapeFloat3 {
-  0%, 100% { transform: translateY(0) rotate(-8deg); }
-  50% { transform: translateY(15px) rotate(-8deg); }
+@keyframes shapeDrift4 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-14px, -24px); }
+  50% { transform: translate(20px, 16px); }
+  75% { transform: translate(-8px, 20px); }
 }
 
-@keyframes shapeFloat4 {
-  0%, 100% { transform: translateY(0) rotate(20deg); }
-  50% { transform: translateY(15px) rotate(20deg); }
+@keyframes shapeDrift5 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-16px, 18px); }
+  66% { transform: translate(12px, -22px); }
 }
 
-@keyframes shapeFloat5 {
-  0%, 100% { transform: translateY(0) rotate(-25deg); }
-  50% { transform: translateY(15px) rotate(-25deg); }
+@keyframes shapeFloatInner1 {
+  0%, 100% { transform: rotate(12deg) translateY(0); }
+  50% { transform: rotate(12deg) translateY(-18px); }
 }
+
+@keyframes shapeFloatInner2 {
+  0%, 100% { transform: rotate(-15deg) translateY(0); }
+  50% { transform: rotate(-15deg) translateY(20px); }
+}
+
+@keyframes shapeFloatInner3 {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50% { transform: rotate(-8deg) translateY(-16px); }
+}
+
+@keyframes shapeFloatInner4 {
+  0%, 100% { transform: rotate(20deg) translateY(0); }
+  50% { transform: rotate(20deg) translateY(18px); }
+}
+
+@keyframes shapeFloatInner5 {
+  0%, 100% { transform: rotate(-25deg) translateY(0); }
+  50% { transform: rotate(-25deg) translateY(-14px); }
+}
+
+.hero-shape.is-floating .hero-shape__inner {
+  animation-duration: 15s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.hero-shape--1.is-floating .hero-shape__inner { animation-name: shapeFloatInner1; animation-duration: 14s; }
+.hero-shape--2.is-floating .hero-shape__inner { animation-name: shapeFloatInner2; animation-duration: 17s; animation-delay: -3s; }
+.hero-shape--3.is-floating .hero-shape__inner { animation-name: shapeFloatInner3; animation-duration: 15s; animation-delay: -5s; }
+.hero-shape--4.is-floating .hero-shape__inner { animation-name: shapeFloatInner4; animation-duration: 13s; animation-delay: -2s; }
+.hero-shape--5.is-floating .hero-shape__inner { animation-name: shapeFloatInner5; animation-duration: 19s; animation-delay: -7s; }
 
 .hero-slide__inner--welcome {
   position: relative;
