@@ -38,78 +38,173 @@
   </header>
 
   <main>
-    <!-- Banner: add your image to assets/banners/services.jpg -->
-    <section class="page-banner" style="--banner-image: url('assets/banners/services.jpg')">
+    <section class="page-banner">
+      <div class="page-banner__bg" style="background-image: url('assets/banner-services.png')"></div>
+      <div class="page-banner__shapes" aria-hidden="true">
+        <span class="page-banner__shape page-banner__shape--1"></span>
+        <span class="page-banner__shape page-banner__shape--2"></span>
+        <span class="page-banner__shape page-banner__shape--3"></span>
+      </div>
       <div class="page-banner__overlay"></div>
-      <div class="container page-banner__content">
+      <div class="container page-banner__content reveal">
         <nav class="page-banner__breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a>
           <span>/</span>
           <span>Services</span>
         </nav>
         <h1 class="page-banner__title">Our Services</h1>
-        <p class="page-banner__desc">Everything you need to print, promote, and prosper — from business cards to large-format banners.</p>
+        <p class="page-banner__desc">Everything you need to print, promote, and prosper — from business cards to large-format banners across Kigali and Rwanda.</p>
       </div>
     </section>
 
     <section class="page-content page-content--gray">
       <div class="container">
+        <div class="section-header reveal">
+          <p class="section-header__eyebrow">What We Print</p>
+          <h2 class="section-header__title">Professional Printing Solutions</h2>
+          <p class="section-header__desc">From first impressions to full campaigns, Fresh Print delivers vibrant quality on every project.</p>
+        </div>
         <div class="services__grid">
-          <article class="service-card">
-            <div class="service-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-card__media">
+              <img src="assets/service-business-cards.png" alt="Premium business cards printing" loading="lazy">
             </div>
-            <h3>Business Cards</h3>
-            <p>Premium stock, custom shapes, foil stamping, and spot UV options.</p>
+            <div class="service-card__body">
+              <h3>Business Cards</h3>
+              <p>Premium stock, custom shapes, foil stamping, and spot UV options for a memorable first impression.</p>
+              <a href="contact.html#quote" class="service-card__link">Get a quote &rarr;</a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-card__media">
+              <img src="assets/service-large-format.png" alt="Large format banners and signage" loading="lazy">
             </div>
-            <h3>Large Format</h3>
-            <p>Banners, posters, signage, and window graphics at any scale.</p>
+            <div class="service-card__body">
+              <h3>Large Format</h3>
+              <p>Banners, posters, signage, and window graphics at any scale — indoor and outdoor materials.</p>
+              <a href="contact.html#quote" class="service-card__link">Get a quote &rarr;</a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <article class="service-card reveal reveal-delay-3">
+            <div class="service-card__media">
+              <img src="assets/service-marketing.png" alt="Flyers brochures and marketing materials" loading="lazy">
             </div>
-            <h3>Marketing Materials</h3>
-            <p>Flyers, brochures, catalogs, and direct mail campaigns.</p>
+            <div class="service-card__body">
+              <h3>Marketing Materials</h3>
+              <p>Flyers, brochures, catalogs, and direct mail campaigns that help your brand stand out.</p>
+              <a href="contact.html#quote" class="service-card__link">Get a quote &rarr;</a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.38 3.46L16 2 4 5v6.09A4 4 0 0 0 4 19.91V21h16v-1.09A4 4 0 0 0 20 15.09V7l.38-3.54z"/><path d="M4 11h16"/></svg>
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-card__media">
+              <img src="assets/service-apparel.png" alt="Custom apparel screen printing and embroidery" loading="lazy">
             </div>
-            <h3>Custom Apparel</h3>
-            <p>T-shirts, hoodies, hats with screen print or embroidery.</p>
+            <div class="service-card__body">
+              <h3>Custom Apparel</h3>
+              <p>T-shirts, hoodies, and hats with screen print or embroidery for teams, events, and brands.</p>
+              <a href="contact.html#quote" class="service-card__link">Get a quote &rarr;</a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-card__media">
+              <img src="assets/service-rush.png" alt="Fast rush printing turnaround" loading="lazy">
             </div>
-            <h3>Fast Turnaround</h3>
-            <p>Same-day and next-day rush printing when you need it most.</p>
+            <div class="service-card__body">
+              <h3>Fast Turnaround</h3>
+              <p>Same-day and next-day rush printing when deadlines are tight — we move as fast as you need.</p>
+              <a href="contact.html#quote" class="service-card__link">Get a quote &rarr;</a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <article class="service-card reveal reveal-delay-3">
+            <div class="service-card__media">
+              <img src="assets/service-design.png" alt="In-house design support for print projects" loading="lazy">
             </div>
-            <h3>Design Support</h3>
-            <p>Our in-house designers help bring your vision to perfection.</p>
+            <div class="service-card__body">
+              <h3>Design Support</h3>
+              <p>Our in-house designers help refine your artwork and prepare files for flawless print results.</p>
+              <a href="contact.html#quote" class="service-card__link">Get a quote &rarr;</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="cta-strip">
+    <section class="process">
       <div class="container">
+        <div class="section-header reveal">
+          <p class="section-header__eyebrow">How It Works</p>
+          <h2 class="section-header__title">From Idea to Print in 4 Steps</h2>
+        </div>
+        <div class="process__grid">
+          <div class="process-step reveal reveal-delay-1">
+            <div class="process-step__num">1</div>
+            <h3>Share Your Project</h3>
+            <p>Call, WhatsApp, or send your brief online. Tell us what you need printed.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <div class="process-step__num">2</div>
+            <h3>Free File Review</h3>
+            <p>We check your artwork and send a proof so you approve before we print.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <div class="process-step__num">3</div>
+            <h3>Print &amp; Quality Check</h3>
+            <p>Your job runs on professional equipment with a full quality inspection.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-4">
+            <div class="process-step__num">4</div>
+            <h3>Pickup or Delivery</h3>
+            <p>Collect at KN 87 St, Kigali, or arrange delivery anywhere in Rwanda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-header__eyebrow">Our Work</p>
+          <h2 class="section-header__title">Recent Print Projects</h2>
+          <p class="section-header__desc">A sample of the products we produce for businesses and brands in Rwanda.</p>
+        </div>
+        <div class="gallery__grid">
+          <figure class="gallery-item reveal reveal-delay-1">
+            <img src="images/cards4.png" alt="Premium business card samples" loading="lazy">
+            <figcaption>Business Cards</figcaption>
+          </figure>
+          <figure class="gallery-item reveal reveal-delay-2">
+            <img src="images/banner.png" alt="Large format banner printing" loading="lazy">
+            <figcaption>Banners &amp; Signage</figcaption>
+          </figure>
+          <figure class="gallery-item reveal reveal-delay-3">
+            <img src="images/flyers.png" alt="Marketing flyers and brochures" loading="lazy">
+            <figcaption>Flyers &amp; Brochures</figcaption>
+          </figure>
+          <figure class="gallery-item reveal reveal-delay-1">
+            <img src="images/appel 2.png" alt="Branded custom apparel" loading="lazy">
+            <figcaption>Custom Apparel</figcaption>
+          </figure>
+          <figure class="gallery-item reveal reveal-delay-2">
+            <img src="images/mug.png" alt="Branded promotional mugs" loading="lazy">
+            <figcaption>Promotional Items</figcaption>
+          </figure>
+          <figure class="gallery-item reveal reveal-delay-3">
+            <img src="images/bag.png" alt="Branded tote bags" loading="lazy">
+            <figcaption>Branded Bags</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container reveal">
         <h2>Need a Custom Quote?</h2>
-        <p>Tell us about your project and we'll recommend the best printing solution.</p>
+        <p>Tell us about your project and we'll recommend the best printing solution within 24 hours.</p>
         <a href="contact.html#quote" class="btn btn--outline">Request a Quote</a>
       </div>
     </section>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fresh Print blog — printing tips, design trends, and industry insights.">
+  <meta name="description" content="Fresh Print blog — printing tips, design trends, and industry insights for businesses in Rwanda.">
   <title>Blog | Fresh Print</title>
   <link rel="icon" href="assets/icon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/icon.png">
@@ -38,54 +38,69 @@
   </header>
 
   <main>
-    <!-- Banner: add your image to assets/banners/blog.jpg -->
-    <section class="page-banner" style="--banner-image: url('assets/banners/blog.jpg')">
+    <section class="page-banner">
+      <div class="page-banner__bg" style="background-image: url('assets/banner-blog.png')"></div>
+      <div class="page-banner__shapes" aria-hidden="true">
+        <span class="page-banner__shape page-banner__shape--1"></span>
+        <span class="page-banner__shape page-banner__shape--2"></span>
+        <span class="page-banner__shape page-banner__shape--3"></span>
+      </div>
       <div class="page-banner__overlay"></div>
-      <div class="container page-banner__content">
+      <div class="container page-banner__content reveal">
         <nav class="page-banner__breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a>
           <span>/</span>
           <span>Blog</span>
         </nav>
         <h1 class="page-banner__title">Our Blog</h1>
-        <p class="page-banner__desc">Printing tips, design trends, and insights to help your brand stand out.</p>
+        <p class="page-banner__desc">Printing tips, design trends, and insights to help your brand stand out in Rwanda and beyond.</p>
       </div>
     </section>
 
     <section class="page-content page-content--gray">
       <div class="container">
         <div class="blog__grid">
-          <article class="blog-card">
-            <!-- Optional: add image to assets/banners/blog-post-1.jpg -->
-            <div class="blog-card__image" style="--blog-image: url('assets/banners/blog-post-1.jpg')"></div>
+          <article class="blog-card reveal reveal-delay-1">
+            <div class="blog-card__image" style="--blog-image: url('assets/blog-post-1.png')"></div>
             <div class="blog-card__body">
               <time class="blog-card__date" datetime="2026-03-15">March 15, 2026</time>
               <h3>5 Business Card Design Tips That Make You Memorable</h3>
-              <p>Your business card is often the first physical touchpoint with a client. Here's how to make it count.</p>
-              <a href="#" class="blog-card__link">Read more &rarr;</a>
+              <p>Your business card is often the first physical touchpoint with a client. Here's how to make it count with color, texture, and layout.</p>
+              <a href="contact.html#quote" class="blog-card__link">Get cards printed &rarr;</a>
             </div>
           </article>
 
-          <article class="blog-card">
-            <div class="blog-card__image" style="--blog-image: url('assets/banners/blog-post-2.jpg')"></div>
+          <article class="blog-card reveal reveal-delay-2">
+            <div class="blog-card__image" style="--blog-image: url('assets/blog-post-2.png')"></div>
             <div class="blog-card__body">
               <time class="blog-card__date" datetime="2026-03-01">March 1, 2026</time>
               <h3>Large Format Printing: Indoor vs. Outdoor Materials</h3>
-              <p>Choosing the right vinyl or fabric for your banner can mean the difference between lasting months or years.</p>
-              <a href="#" class="blog-card__link">Read more &rarr;</a>
+              <p>Choosing the right vinyl or fabric for your banner can mean the difference between lasting months or years in Rwanda's climate.</p>
+              <a href="contact.html#quote" class="blog-card__link">Order a banner &rarr;</a>
             </div>
           </article>
 
-          <article class="blog-card">
-            <div class="blog-card__image" style="--blog-image: url('assets/banners/blog-post-3.jpg')"></div>
+          <article class="blog-card reveal reveal-delay-3">
+            <div class="blog-card__image" style="--blog-image: url('assets/blog-post-3.png')"></div>
             <div class="blog-card__body">
               <time class="blog-card__date" datetime="2026-02-18">February 18, 2026</time>
               <h3>Eco-Friendly Printing: What You Need to Know</h3>
-              <p>Sustainable inks, recycled paper stocks, and how Fresh Print is reducing our environmental footprint.</p>
-              <a href="#" class="blog-card__link">Read more &rarr;</a>
+              <p>Sustainable inks, recycled paper stocks, and how Fresh Print is reducing our environmental footprint in Kigali.</p>
+              <a href="about.html" class="blog-card__link">Learn about us &rarr;</a>
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container reveal">
+        <h2>Stay in the Loop</h2>
+        <p>Get printing tips, seasonal offers, and Fresh Print news delivered to your inbox.</p>
+        <form class="newsletter__form" id="newsletterForm">
+          <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
+          <button type="submit" class="btn btn--outline">Subscribe</button>
+        </form>
       </div>
     </section>
   </main>

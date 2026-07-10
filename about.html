@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Fresh Print — over 15 years of professional printing. More than just ink on paper.">
+  <meta name="description" content="About Fresh Print — over 15 years of professional printing in Kigali, Rwanda. More than just ink on paper.">
   <title>About | Fresh Print</title>
   <link rel="icon" href="assets/icon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/icon.png">
@@ -38,36 +38,44 @@
   </header>
 
   <main>
-    <!-- Banner: add your image to assets/banners/about.jpg -->
-    <section class="page-banner" style="--banner-image: url('assets/banners/about.jpg')">
+    <section class="page-banner">
+      <div class="page-banner__bg" style="background-image: url('assets/banner-about.png')"></div>
+      <div class="page-banner__shapes" aria-hidden="true">
+        <span class="page-banner__shape page-banner__shape--1"></span>
+        <span class="page-banner__shape page-banner__shape--2"></span>
+        <span class="page-banner__shape page-banner__shape--3"></span>
+      </div>
       <div class="page-banner__overlay"></div>
-      <div class="container page-banner__content">
+      <div class="container page-banner__content reveal">
         <nav class="page-banner__breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a>
           <span>/</span>
           <span>About</span>
         </nav>
         <h1 class="page-banner__title">About Fresh Print</h1>
-        <p class="page-banner__desc">More than just ink on paper — we bring your ideas to life with passion and precision.</p>
+        <p class="page-banner__desc">More than just ink on paper — we bring your ideas to life with passion and precision from Kigali, Rwanda.</p>
       </div>
     </section>
 
     <section class="page-content">
       <div class="container about__inner">
-        <div class="about__visual">
+        <div class="about__visual reveal">
+          <div class="about__photo">
+            <img src="assets/about-workspace.png" alt="Fresh Print studio workspace in Kigali" loading="lazy">
+          </div>
           <div class="about__logo-wrap">
             <img src="assets/logo.png" alt="Fresh Print" width="280" loading="lazy">
           </div>
           <div class="about__accent about__accent--1"></div>
           <div class="about__accent about__accent--2"></div>
         </div>
-        <div class="about__content">
+        <div class="about__content reveal reveal-delay-2">
           <p class="section-header__eyebrow">Our Story</p>
           <h2 class="section-header__title">More Than Just<br>Ink On Paper</h2>
           <p>
             At Fresh Print, we believe every printed piece tells a story. For over 15 years,
-            we've helped businesses, entrepreneurs, and creatives turn ideas into tangible,
-            beautiful results.
+            we've helped businesses, entrepreneurs, and creatives in Kigali and across Rwanda
+            turn ideas into tangible, beautiful results.
           </p>
           <p>
             Our state-of-the-art equipment, eco-friendly inks, and passionate team ensure
@@ -75,12 +83,79 @@
           </p>
           <ul class="about__features">
             <li>Eco-friendly printing options</li>
-            <li>Free file review & proofing</li>
-            <li>Local pickup & nationwide shipping</li>
+            <li>Free file review &amp; proofing</li>
+            <li>Local pickup &amp; nationwide delivery</li>
             <li>15+ years of industry experience</li>
             <li>100% satisfaction guarantee</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="about__stats stats">
+      <div class="container stats__grid">
+        <div class="stat reveal reveal-delay-1">
+          <span class="stat__num">10K+</span>
+          <span class="stat__label">Projects Delivered</span>
+        </div>
+        <div class="stat reveal reveal-delay-2">
+          <span class="stat__num">24hr</span>
+          <span class="stat__label">Rush Turnaround</span>
+        </div>
+        <div class="stat reveal reveal-delay-3">
+          <span class="stat__num">100%</span>
+          <span class="stat__label">Quality Guarantee</span>
+        </div>
+        <div class="stat reveal reveal-delay-4">
+          <span class="stat__num">15+</span>
+          <span class="stat__label">Years Experience</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-content page-content--gray">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-header__eyebrow">Why Fresh Print</p>
+          <h2 class="section-header__title">Built on Trust &amp; Quality</h2>
+        </div>
+        <div class="values__grid">
+          <article class="value-card reveal reveal-delay-1">
+            <div class="value-card__media">
+              <img src="assets/service-design.png" alt="Expert design and file preparation" loading="lazy">
+            </div>
+            <div class="value-card__body">
+              <h3>Expert Craftsmanship</h3>
+              <p>Every file is reviewed by our team before printing to ensure crisp, accurate results.</p>
+            </div>
+          </article>
+          <article class="value-card reveal reveal-delay-2">
+            <div class="value-card__media">
+              <img src="assets/service-rush.png" alt="Fast reliable printing turnaround" loading="lazy">
+            </div>
+            <div class="value-card__body">
+              <h3>Reliable Turnaround</h3>
+              <p>From same-day rush jobs to large bulk orders, we deliver on time, every time.</p>
+            </div>
+          </article>
+          <article class="value-card reveal reveal-delay-3">
+            <div class="value-card__media">
+              <img src="assets/banner-contact.png" alt="Friendly local print shop in Kigali" loading="lazy">
+            </div>
+            <div class="value-card__body">
+              <h3>Local &amp; Personal</h3>
+              <p>Visit us on KN 87 St, Kigali — or reach us on WhatsApp for quick, friendly support.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container reveal">
+        <h2>Ready to Work With Us?</h2>
+        <p>Get a free quote within 24 hours — no obligation.</p>
+        <a href="contact.html#quote" class="btn btn--outline">Contact Fresh Print</a>
       </div>
     </section>
   </main>

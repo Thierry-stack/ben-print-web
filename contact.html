@@ -38,10 +38,15 @@
   </header>
 
   <main>
-    <!-- Banner: add your image to assets/banners/contact.jpg -->
-    <section class="page-banner" style="--banner-image: url('assets/banners/contact.jpg')">
+    <section class="page-banner">
+      <div class="page-banner__bg" style="background-image: url('assets/banner-contact.png')"></div>
+      <div class="page-banner__shapes" aria-hidden="true">
+        <span class="page-banner__shape page-banner__shape--1"></span>
+        <span class="page-banner__shape page-banner__shape--2"></span>
+        <span class="page-banner__shape page-banner__shape--3"></span>
+      </div>
       <div class="page-banner__overlay"></div>
-      <div class="container page-banner__content">
+      <div class="container page-banner__content reveal">
         <nav class="page-banner__breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a>
           <span>/</span>
@@ -55,7 +60,10 @@
     <section class="page-content page-content--gray" id="quote">
       <div class="container">
         <div class="contact__inner">
-          <div class="contact__info">
+          <div class="contact__info reveal">
+            <div class="contact__visual">
+              <img src="assets/banner-contact.png" alt="Fresh Print shop in Kigali" loading="lazy">
+            </div>
             <p class="section-header__eyebrow">Get In Touch</p>
             <h2 class="section-header__title">Ready to Print?</h2>
             <p>We're here to help with any printing project — big or small. Reach out by phone, WhatsApp, email, or fill out the form.</p>
@@ -77,9 +85,20 @@
                 <a href="https://www.google.com/maps/search/?api=1&amp;query=KN+87+St,+Kigali,+Rwanda" target="_blank" rel="noopener noreferrer">KN 87 St, Kigali, Rwanda</a>
               </div>
             </div>
+            <div class="contact__hours">
+              <h3>Business Hours</h3>
+              <dl>
+                <dt>Monday – Friday</dt>
+                <dd>8:00 AM – 6:00 PM</dd>
+                <dt>Saturday</dt>
+                <dd>9:00 AM – 2:00 PM</dd>
+                <dt>Sunday</dt>
+                <dd>Closed</dd>
+              </dl>
+            </div>
           </div>
 
-          <form class="contact__form" id="contactForm">
+          <form class="contact__form reveal reveal-delay-2" id="contactForm">
             <div class="form-group">
               <label for="name">Full Name</label>
               <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -110,7 +129,7 @@
 
     <section class="contact-map" id="location">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <p class="section-header__eyebrow">Find Us</p>
           <h2 class="section-header__title">Visit Fresh Print</h2>
           <p class="section-header__desc">We are located on KN 87 Street in Kigali, Rwanda. Use the map below to get directions to our business.</p>
