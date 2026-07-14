@@ -327,36 +327,8 @@
       const toggle = document.getElementById('navToggle');
       const navLinks = document.getElementById('navLinks');
       if (navLinks) navLinks.insertAdjacentElement('afterend', btn);
-      else if (toggle) nav.insertBefore(btn, toggle);
+      else if (toggle) toggle.insertAdjacentElement('afterend', btn);
       else nav.appendChild(btn);
-
-      if (navLinks && !navLinks.querySelector('.nav__mobile-util')) {
-        const mobileUtil = document.createElement('li');
-        mobileUtil.className = 'nav__mobile-util';
-        mobileUtil.innerHTML = `
-          <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language">
-            <button type="button" class="lang-switcher__btn" data-lang="en">EN</button>
-            <button type="button" class="lang-switcher__btn" data-lang="fr">FR</button>
-          </div>
-          <div class="currency-switcher currency-switcher--mobile" role="group" aria-label="Currency">
-            <button type="button" class="currency-switcher__btn" data-currency="RWF">RWF</button>
-            <button type="button" class="currency-switcher__btn" data-currency="USD">USD</button>
-          </div>`;
-        navLinks.appendChild(mobileUtil);
-        mobileUtil.querySelector('.lang-switcher--mobile').addEventListener('click', (e) => {
-          const b = e.target.closest('[data-lang]');
-          if (!b) return;
-          setLanguage(b.dataset.lang);
-        });
-        mobileUtil.querySelector('.currency-switcher--mobile').addEventListener('click', (e) => {
-          const b = e.target.closest('[data-currency]');
-          if (!b) return;
-          currentCurrency = b.dataset.currency;
-          localStorage.setItem('fp-currency', currentCurrency);
-          applyCurrency();
-          applyTranslations();
-        });
-      }
     }
 
     const openBtn = document.getElementById('siteSearchOpen');
