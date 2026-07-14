@@ -10,21 +10,28 @@
   const BEAM_RGB = '104, 211, 145'; /* --green-light */
   const BEAM_RGB_ALT = '154, 230, 92'; /* --green-lime */
 
-  function createBeam(width, height, layer) {
+  function getMotionScale() {
+    if (window.matchMedia('(max-width: 640px)').matches) return 4;
+    if (window.matchMedia('(max-width: 768px)').matches) return 2.75;
+    return 1;
+  }
+
+  function createBeam(width, height, layer, motionScale) {
     const angle = -35 + Math.random() * 10;
     const baseSpeed = 0.15 + layer * 0.12;
     const baseOpacity = 0.06 + layer * 0.04;
     const baseWidth = 8 + layer * 4;
+    const opacityBoost = motionScale > 1 ? 1.35 : 1;
     return {
       x: Math.random() * width,
       y: Math.random() * height,
       width: baseWidth,
       length: height * 2.2,
       angle,
-      speed: baseSpeed + Math.random() * 0.15,
-      opacity: baseOpacity + Math.random() * 0.08,
+      speed: (baseSpeed + Math.random() * 0.15) * motionScale,
+      opacity: Math.min(1, (baseOpacity + Math.random() * 0.08) * opacityBoost),
       pulse: Math.random() * Math.PI * 2,
-      pulseSpeed: 0.008 + Math.random() * 0.012,
+      pulseSpeed: (0.008 + Math.random() * 0.012) * motionScale,
       layer,
       alt: Math.random() > 0.5,
     };
@@ -67,9 +74,10 @@
 
     function resetBeams() {
       beams = [];
+      const motionScale = getMotionScale();
       for (let layer = 1; layer <= LAYERS; layer++) {
         for (let i = 0; i < BEAMS_PER_LAYER; i++) {
-          beams.push(createBeam(width, height, layer));
+          beams.push(createBeam(width, height, layer, motionScale));
         }
       }
     }
