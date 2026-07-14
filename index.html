@@ -28,9 +28,12 @@
       </button>
       <ul class="nav__links" id="navLinks">
         <li><a href="index.html" class="nav__link" data-nav="home">Home</a></li>
+        <li><a href="products.html" class="nav__link" data-nav="products">Products</a></li>
         <li><a href="services.html" class="nav__link" data-nav="services">Services</a></li>
+        <li><a href="deals.html" class="nav__link" data-nav="deals">Deals</a></li>
         <li><a href="about.html" class="nav__link" data-nav="about">About</a></li>
         <li><a href="blog.html" class="nav__link" data-nav="blog">Blog</a></li>
+        <li><a href="faq.html" class="nav__link" data-nav="faq">FAQ</a></li>
         <li><a href="contact.html" class="nav__link" data-nav="contact">Contact</a></li>
         <li><a href="contact.html#quote" class="nav__link nav__link--cta">Get a Quote</a></li>
       </ul>
@@ -67,7 +70,7 @@
               <div class="hero-slide__content hero-slide__content--welcome">
                 <p class="hero__eyebrow">Welcome to Fresh Print</p>
                 <h1 class="hero__title">
-                  Bring Your Ideas<br>
+                  <span class="hero__title-line">Bring Your Ideas</span><br>
                   <span class="hero__title-accent">To Life in Print</span>
                 </h1>
                 <p class="hero__desc">
@@ -162,21 +165,89 @@
 
     <section class="stats">
       <div class="container stats__grid">
-        <div class="stat">
+        <div class="stat reveal reveal-delay-1">
           <span class="stat__num">10K+</span>
           <span class="stat__label">Projects Delivered</span>
         </div>
-        <div class="stat">
+        <div class="stat reveal reveal-delay-2">
           <span class="stat__num">24hr</span>
           <span class="stat__label">Rush Turnaround</span>
         </div>
-        <div class="stat">
+        <div class="stat reveal reveal-delay-3">
           <span class="stat__num">100%</span>
           <span class="stat__label">Satisfaction Guarantee</span>
         </div>
-        <div class="stat">
+        <div class="stat reveal reveal-delay-4">
           <span class="stat__num">15+</span>
           <span class="stat__label">Years Experience</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-content page-content--gray">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-header__eyebrow">Current Offers</p>
+          <h2 class="section-header__title">Deals &amp; Package Pricing</h2>
+          <p class="section-header__desc">Event packages and bulk savings — prices in RWF with USD toggle in the top bar.</p>
+        </div>
+        <div class="deals__grid">
+          <article class="price-card price-card--featured reveal">
+            <div class="price-card__body">
+              <span class="price-card__badge">Save 25%</span>
+              <h3>Expo Booth Kit</h3>
+              <p>Banner, roll-up, 500 flyers &amp; 10 staff T-shirts — one fixed price.</p>
+              <div class="price-card__price">
+                <span class="price-card__price-old" data-rwf="600000">RWF 600,000</span>
+                <span data-rwf="450000">RWF 450,000</span>
+              </div>
+              <a href="deals.html#booth-kit" class="btn btn--primary">View Deal</a>
+            </div>
+          </article>
+          <article class="price-card reveal">
+            <div class="price-card__body">
+              <span class="price-card__badge">15% Off</span>
+              <h3>Event Printing</h3>
+              <p>Attending or hosting an event in Kigali? Save on your full print order.</p>
+              <div class="price-card__price">15% OFF</div>
+              <a href="deals.html" class="btn btn--primary">See All Deals</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-header__eyebrow">By Industry</p>
+          <h2 class="section-header__title">Printing for Every Sector</h2>
+        </div>
+        <div class="industries__grid">
+          <a href="products.html#industry-events" class="industry-card reveal reveal-delay-1">
+            <div class="industry-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <h3>Conferences &amp; Events</h3>
+          </a>
+          <a href="products.html#industry-weddings" class="industry-card reveal reveal-delay-2">
+            <div class="industry-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <h3>Weddings &amp; Parties</h3>
+          </a>
+          <a href="products.html#industry-corporate" class="industry-card reveal reveal-delay-3">
+            <div class="industry-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+            <h3>Office &amp; Corporate</h3>
+          </a>
+          <a href="products.html" class="industry-card reveal reveal-delay-1">
+            <div class="industry-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>Retail &amp; Hospitality</h3>
+          </a>
+          <a href="products.html" class="industry-card reveal reveal-delay-2">
+            <div class="industry-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <h3>Schools, NGOs &amp; Gov</h3>
+          </a>
+          <a href="products.html" class="industry-card reveal reveal-delay-3">
+            <div class="industry-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div>
+            <h3>Startups &amp; Small Biz</h3>
+          </a>
         </div>
       </div>
     </section>
@@ -188,16 +259,25 @@
           <h2 class="section-header__title">Everything You Need</h2>
         </div>
         <div class="home-links__grid">
-          <a href="services.html" class="home-link-card reveal reveal-delay-1">
+          <a href="products.html" class="home-link-card reveal reveal-delay-1">
             <div class="home-link-card__media">
               <img src="assets/home-link-services.png" alt="" loading="lazy">
             </div>
             <div class="home-link-card__body">
-              <h3>Services</h3>
-              <p>Business cards, banners, flyers &amp; more</p>
+              <h3>Products</h3>
+              <p>Full catalogue with RWF pricing</p>
             </div>
           </a>
-          <a href="about.html" class="home-link-card reveal reveal-delay-2">
+          <a href="deals.html" class="home-link-card reveal reveal-delay-2">
+            <div class="home-link-card__media">
+              <img src="assets/service-rush.png" alt="" loading="lazy">
+            </div>
+            <div class="home-link-card__body">
+              <h3>Deals</h3>
+              <p>Event packages &amp; bulk savings</p>
+            </div>
+          </a>
+          <a href="about.html" class="home-link-card reveal reveal-delay-3">
             <div class="home-link-card__media">
               <img src="assets/home-link-about.png" alt="" loading="lazy">
             </div>
@@ -206,7 +286,7 @@
               <p>Our story &amp; commitment to quality</p>
             </div>
           </a>
-          <a href="blog.html" class="home-link-card reveal reveal-delay-3">
+          <a href="blog.html" class="home-link-card reveal reveal-delay-4">
             <div class="home-link-card__media">
               <img src="assets/home-link-blog.png" alt="" loading="lazy">
             </div>
@@ -215,15 +295,53 @@
               <p>Tips, trends &amp; printing insights</p>
             </div>
           </a>
-          <a href="contact.html" class="home-link-card reveal reveal-delay-4">
-            <div class="home-link-card__media">
-              <img src="assets/home-link-contact.png" alt="" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-header__eyebrow">Testimonials</p>
+          <h2 class="section-header__title">Loved by Clients in Kigali &amp; Abroad</h2>
+        </div>
+        <div class="testimonials__grid">
+          <article class="testimonial-card reveal reveal-delay-1">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <blockquote>"Fast, reliable and the print quality is excellent. They turned our conference banners around in a single day."</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">KC</div>
+              <div><strong>Event Organiser</strong><span>Kigali Convention Centre</span></div>
             </div>
-            <div class="home-link-card__body">
-              <h3>Contact</h3>
-              <p>Get in touch for a free quote</p>
+          </article>
+          <article class="testimonial-card reveal reveal-delay-2">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <blockquote>"We flew in for a summit and had everything — badges, backdrop and brochures — printed and delivered to our hotel."</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">IX</div>
+              <div><strong>International Exhibitor</strong><span>Conference delegate</span></div>
             </div>
-          </a>
+          </article>
+          <article class="testimonial-card reveal reveal-delay-3">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <blockquote>"From our logo to business cards and signage, they handled our entire brand rollout. A true one-stop studio."</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">ST</div>
+              <div><strong>Founder</strong><span>Local startup</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container reveal">
+        <p>Trusted by businesses, NGOs, embassies &amp; creatives across Rwanda</p>
+        <div class="trust-strip__logos">
+          <span>Local &amp; International Clients</span>
+          <span>Same-day Rush Options</span>
+          <span>Delivery Across Rwanda</span>
+          <span>100% Quality Guarantee</span>
         </div>
       </div>
     </section>
@@ -245,8 +363,11 @@
       </div>
       <div class="footer__links">
         <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="deals.html">Deals</a>
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -255,7 +376,7 @@
         <a href="https://wa.me/250798546769" target="_blank" rel="noopener noreferrer">WhatsApp: 0798546769</a>
         <a href="mailto:Benjamin@freshprintrwanda.com">Benjamin@freshprintrwanda.com</a>
       </div>
-      <p class="footer__copy">&copy; 2026 Fresh Print. All rights reserved.</p>
+      <p class="footer__copy">&copy; 2026 Fresh Print. KN 87 St, Kigali, Rwanda.</p>
     </div>
   </footer>
 
@@ -263,6 +384,9 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
   </a>
 
+  <script src="js/i18n-content.js" defer></script>
+  <script src="js/site-features.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/footer-beams.js" defer></script>
 </body>
 </html>

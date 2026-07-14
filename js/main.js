@@ -65,41 +65,100 @@
     return ticker;
   }
 
+  function translate(key, fallback) {
+    if (typeof window.FP_t === 'function') return window.FP_t(key);
+    return fallback;
+  }
+
+  const TOP_TICKER_KEYS = [
+    'ticker.top.eventDiscount',
+    'ticker.top.contact',
+    'ticker.top.email',
+    'ticker.top.freeQuote',
+  ];
+
+  const BOTTOM_TICKER_ITEMS = [
+    { icon: 'pin', key: 'ticker.bottom.delivery' },
+    { icon: 'check', key: 'ticker.bottom.quality' },
+    { icon: 'mail', key: 'ticker.bottom.clients' },
+    { icon: 'bolt', key: 'ticker.bottom.rush' },
+    { icon: 'clock', key: 'ticker.bottom.proofing' },
+    { icon: 'print', key: 'ticker.bottom.products' },
+  ];
+
+  const TOP_TICKER_FALLBACK = [
+    'Attending or hosting an event in Kigali? Enjoy 15% off your print order.',
+    'WhatsApp: 0798546769 — Call: 0788594453',
+    'Email: Benjamin@freshprintrwanda.com',
+    'Free quotes within 24 hours — no obligation.',
+  ];
+
+  const BOTTOM_TICKER_FALLBACK = [
+    'Delivery across Rwanda',
+    '100% quality guarantee',
+    'Local & international clients',
+    'Same-day & rush options',
+    'Free file review & proofing',
+    'Business cards, banners, flyers & apparel',
+  ];
+
+  function getTopTickerItems() {
+    return TOP_TICKER_KEYS.map((key, i) => ({
+      text: translate(key, TOP_TICKER_FALLBACK[i]),
+    }));
+  }
+
+  function getBottomTickerItems() {
+    return BOTTOM_TICKER_ITEMS.map((item, i) => ({
+      icon: item.icon,
+      text: translate(item.key, BOTTOM_TICKER_FALLBACK[i]),
+    }));
+  }
+
+  function fillTickerTrack(track, items, variant) {
+    track.innerHTML = '';
+    track.appendChild(buildTickerGroup(items, variant));
+    const duplicate = buildTickerGroup(items, variant);
+    duplicate.setAttribute('aria-hidden', 'true');
+    track.appendChild(duplicate);
+  }
+
+  function refreshSiteTickers() {
+    const top = document.getElementById('siteTickerTop');
+    const bottom = document.getElementById('siteTickerBottom');
+    if (top) {
+      top.setAttribute('aria-label', translate('ticker.top.aria', 'Announcements'));
+      const track = top.querySelector('.site-ticker__track');
+      if (track) fillTickerTrack(track, getTopTickerItems(), 'top');
+    }
+    if (bottom) {
+      bottom.setAttribute('aria-label', translate('ticker.bottom.aria', 'Highlights'));
+      const track = bottom.querySelector('.site-ticker__track');
+      if (track) fillTickerTrack(track, getBottomTickerItems(), 'bottom');
+    }
+  }
+
   function initSiteTickers() {
     if (document.getElementById('siteTickerTop')) return;
 
-    const topItems = [
-      { text: 'Attending or hosting an event in Kigali? Enjoy 15% off your print order.' },
-      { text: 'WhatsApp: 0798546769 — Call: 0788594453' },
-      { text: 'Email: Benjamin@freshprintrwanda.com' },
-      { text: 'Free quotes within 24 hours — no obligation.' },
-    ];
-
-    const bottomItems = [
-      { icon: 'pin', text: 'Delivery across Rwanda' },
-      { icon: 'check', text: '100% quality guarantee' },
-      { icon: 'mail', text: 'Local & international clients' },
-      { icon: 'bolt', text: 'Same-day & rush options' },
-      { icon: 'clock', text: 'Free file review & proofing' },
-      { icon: 'print', text: 'Business cards, banners, flyers & apparel' },
-    ];
-
-    const topTicker = buildTicker('top', topItems, 'Announcements');
+    const topTicker = buildTicker('top', getTopTickerItems(), translate('ticker.top.aria', 'Announcements'));
     topTicker.id = 'siteTickerTop';
     document.body.insertBefore(topTicker, document.body.firstChild);
 
-    const bottomTicker = buildTicker('bottom', bottomItems, 'Highlights');
+    const bottomTicker = buildTicker('bottom', getBottomTickerItems(), translate('ticker.bottom.aria', 'Highlights'));
     bottomTicker.id = 'siteTickerBottom';
 
     const page = document.body.dataset.page;
     if (page === 'home') {
       const hero = document.getElementById('heroSlider');
-      if (hero) hero.appendChild(bottomTicker);
+      if (hero) hero.insertAdjacentElement('afterend', bottomTicker);
     } else {
       const banner = document.querySelector('.page-banner');
       if (banner) banner.insertAdjacentElement('afterend', bottomTicker);
       else document.querySelector('main')?.prepend(bottomTicker);
     }
+
+    document.addEventListener('fp:langchange', refreshSiteTickers);
   }
 
   initSiteTickers();
@@ -294,7 +353,7 @@
       e.preventDefault();
       const btn = contactForm.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
-      btn.textContent = 'Sent! We\'ll be in touch.';
+      btn.textContent = typeof window.FP_t === 'function' ? window.FP_t('form.contact.sent') : 'Sent! We\'ll be in touch.';
       btn.disabled = true;
       btn.style.opacity = '0.8';
 
@@ -307,9 +366,19 @@
     });
   }
 
+  // ---- FAQ accordion ----
+  document.querySelectorAll('.faq-item__question').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach((el) => el.classList.remove('is-open'));
+      if (!wasOpen) item.classList.add('is-open');
+    });
+  });
+
   // ---- Fade-in on scroll ----
   const observerTargets = document.querySelectorAll(
-    '.reveal, .service-card, .stat, .about__content, .blog-card, .home-link-card, .process-step, .gallery-item, .value-card, .section-header'
+    '.reveal, .service-card, .stat, .about__content, .blog-card, .home-link-card, .process-step, .gallery-item, .value-card, .section-header, .testimonial-card, .price-card, .product-item, .industry-card, .faq-item'
   );
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
@@ -351,7 +420,7 @@
       e.preventDefault();
       const btn = newsletterForm.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
-      btn.textContent = 'Subscribed!';
+      btn.textContent = typeof window.FP_t === 'function' ? window.FP_t('form.newsletter.subscribed') : 'Subscribed!';
       btn.disabled = true;
       setTimeout(() => {
         newsletterForm.reset();
