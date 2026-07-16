@@ -413,6 +413,67 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
   }
 
+  // ---- Showcase carousels (products & industries) ----
+  function initShowcases() {
+    document.querySelectorAll('.showcase__carousel').forEach((carousel) => {
+      const track = carousel.querySelector('[data-showcase]');
+      if (!track) return;
+
+      const prevBtns = carousel.querySelectorAll('[data-showcase-prev]');
+      const nextBtns = carousel.querySelectorAll('[data-showcase-next]');
+      const thumb = carousel.querySelector('.showcase__scrollbar-thumb');
+
+      function getScrollAmount() {
+        const card = track.querySelector('.showcase-card');
+        return card ? card.offsetWidth + 16 : 220;
+      }
+
+      function updateScrollbar() {
+        if (!thumb) return;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (maxScroll <= 0) {
+          thumb.style.width = '100%';
+          thumb.style.left = '0';
+          return;
+        }
+        const ratio = track.clientWidth / track.scrollWidth;
+        const thumbWidth = Math.max(ratio * 100, 12);
+        const left = (track.scrollLeft / maxScroll) * (100 - thumbWidth);
+        thumb.style.width = `${thumbWidth}%`;
+        thumb.style.left = `${left}%`;
+      }
+
+      function updateButtons() {
+        const atStart = track.scrollLeft <= 4;
+        const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+        prevBtns.forEach((btn) => { btn.disabled = atStart; });
+        nextBtns.forEach((btn) => { btn.disabled = atEnd; });
+      }
+
+      function scrollByDir(dir) {
+        track.scrollBy({ left: dir * getScrollAmount(), behavior: 'smooth' });
+      }
+
+      prevBtns.forEach((btn) => btn.addEventListener('click', () => scrollByDir(-1)));
+      nextBtns.forEach((btn) => btn.addEventListener('click', () => scrollByDir(1)));
+
+      track.addEventListener('scroll', () => {
+        updateScrollbar();
+        updateButtons();
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        updateScrollbar();
+        updateButtons();
+      });
+
+      updateScrollbar();
+      updateButtons();
+    });
+  }
+
+  initShowcases();
+
   // ---- Newsletter form ----
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
