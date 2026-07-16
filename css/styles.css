@@ -196,12 +196,45 @@ ul { list-style: none; }
   right: 0;
   z-index: 110;
   height: var(--ticker-h);
-  background: var(--green-dark);
+  overflow: hidden;
+  background: transparent;
   color: var(--yellow);
-  border-bottom: 1px solid rgba(246, 224, 94, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 18px rgba(26, 107, 60, 0.12);
+}
+
+.site-ticker--top::before {
+  content: '';
+  position: absolute;
+  inset: -40% -5%;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 12% 50%, rgba(56, 161, 105, 0.95) 0%, transparent 52%),
+    radial-gradient(ellipse at 88% 50%, rgba(154, 230, 92, 0.82) 0%, transparent 52%),
+    linear-gradient(90deg, rgba(26, 107, 60, 0.92) 0%, rgba(40, 130, 75, 0.78) 50%, rgba(26, 107, 60, 0.92) 100%);
+  animation: tickerLiquidFloat 15s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.site-ticker--top::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(26, 107, 60, 0.22);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  pointer-events: none;
+}
+
+@keyframes tickerLiquidFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(3%, 0) scale(1.04); }
 }
 
 .site-ticker--top .site-ticker__viewport {
+  position: relative;
+  z-index: 2;
   height: 100%;
 }
 
@@ -243,6 +276,10 @@ ul { list-style: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .site-ticker__track {
+    animation: none;
+  }
+
+  .site-ticker--top::before {
     animation: none;
   }
 }
@@ -2397,7 +2434,7 @@ ul { list-style: none; }
 .page-banner__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(26, 107, 60, 0.82) 0%, rgba(56, 161, 105, 0.65) 100%);
+  background: linear-gradient(135deg, rgba(26, 107, 60, 0.58) 0%, rgba(56, 161, 105, 0.42) 100%);
   z-index: 2;
 }
 
@@ -2817,27 +2854,75 @@ ul { list-style: none; }
 /* ---- CTA strip ---- */
 .cta-strip {
   padding: 2.5rem 0 3rem;
-  background: var(--gray-50);
+  background: linear-gradient(155deg, #eef8f2 0%, #f7fafc 50%, #e8f3ec 100%);
   text-align: center;
 }
 
 .cta-strip .container {
+  position: relative;
+  overflow: hidden;
   max-width: min(680px, 92vw);
   margin-inline: auto;
   padding: clamp(2rem, 4vw, 2.75rem) clamp(1.5rem, 4vw, 2.25rem);
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+  background: transparent;
   color: var(--white);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  box-shadow:
+    0 14px 44px rgba(26, 107, 60, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.cta-strip .container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(56, 161, 105, 0.95) 0%, transparent 46%),
+    radial-gradient(circle at 82% 72%, rgba(154, 230, 92, 0.82) 0%, transparent 48%),
+    radial-gradient(circle at 52% 50%, rgba(26, 107, 60, 0.55) 0%, transparent 72%);
+  animation: ctaLiquidFloat 13s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.cta-strip .container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+  background: rgba(26, 107, 60, 0.28);
+  backdrop-filter: blur(22px) saturate(185%);
+  -webkit-backdrop-filter: blur(22px) saturate(185%);
+  pointer-events: none;
+}
+
+@keyframes ctaLiquidFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(22px, -14px) scale(1.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-strip .container::before {
+    animation: none;
+  }
 }
 
 .cta-strip h2 {
+  position: relative;
+  z-index: 2;
   font-size: clamp(1.35rem, 2.8vw, 1.75rem);
   margin-bottom: 0.65rem;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.12);
 }
 
 .cta-strip p {
-  opacity: 0.92;
+  position: relative;
+  z-index: 2;
+  opacity: 0.95;
   margin-bottom: 1.35rem;
   max-width: 420px;
   margin-inline: auto;
@@ -2845,13 +2930,19 @@ ul { list-style: none; }
 }
 
 .cta-strip .btn--outline {
-  border-color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  z-index: 2;
+  border-color: rgba(255, 255, 255, 0.88);
   color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .cta-strip .btn--outline:hover {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--green-dark);
+  border-color: rgba(255, 255, 255, 0.95);
 }
 
 /* ---- Responsive ---- */
@@ -2983,8 +3074,20 @@ ul { list-style: none; }
   }
 
   .site-ticker--top {
-    background: var(--gray-900);
-    border-bottom-color: rgba(255, 255, 255, 0.08);
+    background: transparent;
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  }
+
+  .site-ticker--top::before {
+    background:
+      radial-gradient(ellipse at 12% 50%, rgba(56, 161, 105, 0.7) 0%, transparent 52%),
+      radial-gradient(ellipse at 88% 50%, rgba(104, 211, 145, 0.55) 0%, transparent 52%),
+      linear-gradient(90deg, rgba(26, 32, 44, 0.94) 0%, rgba(45, 55, 72, 0.88) 50%, rgba(26, 32, 44, 0.94) 100%);
+  }
+
+  .site-ticker--top::after {
+    background: rgba(26, 32, 44, 0.28);
   }
 
   .site-ticker__star {
@@ -3061,9 +3164,22 @@ ul { list-style: none; }
   }
 
   .cta-strip .container {
-    background: linear-gradient(135deg, var(--gray-800) 0%, var(--green-dark) 100%);
-    box-shadow: none;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 12px 36px rgba(0, 0, 0, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  .cta-strip .container::before {
+    background:
+      radial-gradient(circle at 18% 28%, rgba(56, 161, 105, 0.75) 0%, transparent 46%),
+      radial-gradient(circle at 82% 72%, rgba(104, 211, 145, 0.6) 0%, transparent 48%),
+      radial-gradient(circle at 52% 50%, rgba(45, 55, 72, 0.65) 0%, transparent 72%);
+  }
+
+  .cta-strip .container::after {
+    background: rgba(45, 55, 72, 0.35);
   }
 
   .page-banner {
