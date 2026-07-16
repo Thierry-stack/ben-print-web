@@ -378,7 +378,7 @@
 
   // ---- Fade-in on scroll ----
   const observerTargets = document.querySelectorAll(
-    '.reveal, .service-card, .stat, .about__content, .blog-card, .home-link-card, .process-step, .gallery-item, .value-card, .section-header, .testimonial-card, .price-card, .product-item, .industry-card, .faq-item'
+    '.reveal, .service-card, .stat, .about__content, .blog-card, .home-link-card, .process-step, .gallery-item, .work-mosaic__item, .value-card, .section-header, .testimonial-card, .price-card, .product-item, .industry-card, .faq-item'
   );
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
