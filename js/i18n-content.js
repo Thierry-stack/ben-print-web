@@ -189,7 +189,7 @@
   };
 
   Object.assign(window.FP_I18N.en, {
-    'home.simple.label': 'Professional Printing & Branding \u00b7 Kigali',
+    'home.simple.label': 'Professional Printing & Branding \u00b7 Kigali and beyond',
     'home.simple.title': 'Business Cards, Banners, T-Shirts & Event Branding',
     'home.simple.lead': 'Fresh Print is a full-service print studio in Kigali. We design and produce marketing materials, signage, apparel, and complete event branding for businesses, NGOs, schools, and conferences across Rwanda.',
     'home.simple.viewProducts': 'View Products & Prices',
@@ -283,7 +283,7 @@
   });
 
   Object.assign(window.FP_I18N.fr, {
-    'home.simple.label': 'Impression & branding professionnels \u00b7 Kigali',
+    'home.simple.label': 'Impression & branding professionnels \u00b7 Kigali et au-del\u00e0',
     'home.simple.title': 'Cartes de visite, banni\u00e8res, T-shirts & branding \u00e9v\u00e9nementiel',
     'home.simple.lead': 'Fresh Print est un studio d\'impression \u00e0 Kigali. Nous concevons et produisons supports marketing, signal\u00e9tique, textile et branding complet pour entreprises, ONG, \u00e9coles et conf\u00e9rences \u00e0 travers le Rwanda.',
     'home.simple.viewProducts': 'Voir produits & tarifs',
