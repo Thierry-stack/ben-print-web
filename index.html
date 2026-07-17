@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/home-simple.css">
 </head>
 <body data-page="home">
 
@@ -41,394 +42,79 @@
   </header>
 
   <main>
-    <section class="hero hero-slider" id="heroSlider">
-      <div class="hero-slider__viewport">
-        <div class="hero-slider__track" id="heroSliderTrack">
-
-          <!-- Slide 0: Welcome -->
-          <article class="hero-slide hero-slide--welcome" data-slide="0">
-            <div class="hero-shapes" aria-hidden="true">
-              <div class="hero-shapes__ambient"></div>
-              <div class="hero-shapes__vignette"></div>
-              <div class="hero-shape hero-shape--1">
-                <div class="hero-shape__inner"></div>
-              </div>
-              <div class="hero-shape hero-shape--2">
-                <div class="hero-shape__inner"></div>
-              </div>
-              <div class="hero-shape hero-shape--3">
-                <div class="hero-shape__inner"></div>
-              </div>
-              <div class="hero-shape hero-shape--4">
-                <div class="hero-shape__inner"></div>
-              </div>
-              <div class="hero-shape hero-shape--5">
-                <div class="hero-shape__inner"></div>
-              </div>
-            </div>
-            <div class="container hero-slide__inner hero-slide__inner--welcome">
-              <div class="hero-slide__content hero-slide__content--welcome">
-                <p class="hero__eyebrow">Welcome to Fresh Print</p>
-                <h1 class="hero__title">
-                  <span class="hero__title-line">Bring Your Ideas</span><br>
-                  <span class="hero__title-accent">To Life in Print</span>
-                </h1>
-                <p class="hero__desc">
-                  From business cards to large-format banners — Fresh Print delivers
-                  vibrant, high-quality results. More than just ink on paper.
-                </p>
-                <div class="hero__actions">
-                  <a href="contact.html#quote" class="btn btn--primary">Start Your Project</a>
-                  <a href="services.html" class="btn btn--outline">View Services</a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Slide 1: Business Cards -->
-          <article class="hero-slide" data-slide="1">
-            <div class="container hero-slide__inner">
-              <div class="hero-slide__content">
-                <p class="hero__eyebrow">Business Cards</p>
-                <h2 class="hero__title">Premium<br><span class="hero__title-accent">Business Cards</span></h2>
-                <p class="hero__desc">Matte, gloss, or textured finishes. Make a lasting first impression.</p>
-              </div>
-              <div class="hero-slide__visual">
-                <img src="images/cards.png" alt="Premium business cards" class="hero-slide__photo" loading="lazy">
-              </div>
-            </div>
-          </article>
-
-          <!-- Slide 2: Flyers -->
-          <article class="hero-slide" data-slide="2">
-            <div class="container hero-slide__inner">
-              <div class="hero-slide__content">
-                <p class="hero__eyebrow">Marketing Materials</p>
-                <h2 class="hero__title">Flyers &<br><span class="hero__title-accent">Brochures</span></h2>
-                <p class="hero__desc">Full-color marketing materials that grab attention and drive action.</p>
-                <span class="hero-slide__tag">Same-day rush available</span>
-              </div>
-              <div class="hero-slide__visual">
-                <img src="images/flyers.png" alt="Flyers and brochures" class="hero-slide__photo" loading="lazy">
-              </div>
-            </div>
-          </article>
-
-          <!-- Slide 3: Banners -->
-          <article class="hero-slide" data-slide="3">
-            <div class="container hero-slide__inner">
-              <div class="hero-slide__content">
-                <p class="hero__eyebrow">Large Format</p>
-                <h2 class="hero__title">Bold<br><span class="hero__title-accent">Banners</span></h2>
-                <p class="hero__desc">Indoor & outdoor vinyl banners built to withstand the elements.</p>
-                <span class="hero-slide__tag">Custom sizes available</span>
-              </div>
-              <div class="hero-slide__visual">
-                <img src="images/banner.png" alt="Large format banners" class="hero-slide__photo" loading="lazy">
-              </div>
-            </div>
-          </article>
-
-          <!-- Slide 4: Apparel -->
-          <article class="hero-slide" data-slide="4">
-            <div class="container hero-slide__inner">
-              <div class="hero-slide__content">
-                <p class="hero__eyebrow">Custom Apparel</p>
-                <h2 class="hero__title">Wear Your<br><span class="hero__title-accent">Brand</span></h2>
-                <p class="hero__desc">Screen printing & embroidery for teams, events, and brands.</p>
-                <span class="hero-slide__tag">Bulk discounts</span>
-              </div>
-              <div class="hero-slide__visual hero-slide__visual--duo">
-                <img src="images/cards3.png" alt="Custom apparel printing" class="hero-slide__photo hero-slide__photo--duo" loading="lazy">
-                <img src="images/appel 2.png" alt="Branded hoodie with logo" class="hero-slide__photo hero-slide__photo--duo hero-slide__photo--hoodie" loading="lazy">
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <div class="hero-slider__controls container">
-        <div class="hero-slider__labels" id="slideLabels" role="tablist">
-          <button type="button" class="hero-slider__label active" data-slide="0" role="tab">Welcome</button>
-          <button type="button" class="hero-slider__label" data-slide="1" role="tab">Cards</button>
-          <button type="button" class="hero-slider__label" data-slide="2" role="tab">Flyers</button>
-          <button type="button" class="hero-slider__label" data-slide="3" role="tab">Banners</button>
-          <button type="button" class="hero-slider__label" data-slide="4" role="tab">Apparel</button>
-        </div>
-        <div class="hero-slider__progress">
-          <div class="hero-slider__progress-bar" id="slideProgress"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats">
-      <div class="container stats__grid">
-        <div class="stat reveal reveal-delay-1">
-          <span class="stat__num">10K+</span>
-          <span class="stat__label">Projects Delivered</span>
-        </div>
-        <div class="stat reveal reveal-delay-2">
-          <span class="stat__num">24hr</span>
-          <span class="stat__label">Rush Turnaround</span>
-        </div>
-        <div class="stat reveal reveal-delay-3">
-          <span class="stat__num">100%</span>
-          <span class="stat__label">Satisfaction Guarantee</span>
-        </div>
-        <div class="stat reveal reveal-delay-4">
-          <span class="stat__num">15+</span>
-          <span class="stat__label">Years Experience</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="showcase showcase--products page-content page-content--gray">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="section-header__eyebrow" data-i18n="home.catalogue.eyebrow">What We Print</p>
-          <h2 class="section-header__title" data-i18n="home.catalogue.title">Printing &amp; Branding for Every Need</h2>
-          <p class="section-header__desc" data-i18n="home.catalogue.desc">Browse our most-requested categories — from everyday business prints to large-format signage, branded merchandise and full creative services.</p>
-        </div>
-      </div>
-      <div class="showcase__carousel reveal">
-        <div class="showcase__track-wrap">
-          <div class="showcase__track" data-showcase tabindex="0">
-            <a href="products.html#marketing" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/postcard.jpeg" alt="Flyers, brochures and posters" loading="lazy">
-              </div>
-              <h3 data-i18n="products.marketing.title">Flyers, Brochures &amp; Posters</h3>
-            </a>
-            <a href="products.html#banners" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/umbrella%201.jpeg" alt="Banners and large format printing" loading="lazy">
-              </div>
-              <h3 data-i18n="home.catalogue.materialBranding">Material Branding</h3>
-            </a>
-            <a href="products.html#stickers" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/branding1.%20.jpeg" alt="Signs, displays and signage" loading="lazy">
-              </div>
-              <h3 data-i18n="home.catalogue.signsTitle">Signs, Displays &amp; Signage</h3>
-            </a>
-            <a href="products.html#apparel" class="showcase-card">
-              <div class="showcase-card__media">
-                <span class="showcase-card__badge showcase-card__badge--trending" data-i18n="home.catalogue.badgeTrending">Trending</span>
-                <img src="images/T-shirt%201.jpeg" alt="Apparel and T-shirt printing" loading="lazy">
-              </div>
-              <h3 data-i18n="products.apparel.title">Apparel &amp; T-Shirt Printing</h3>
-            </a>
-            <a href="products.html#promotional" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/key%20holders.jpeg" alt="Promotional items and giveaways" loading="lazy">
-              </div>
-              <h3 data-i18n="products.promotional.title">Promotional Items</h3>
-            </a>
-            <a href="products.html#design" class="showcase-card">
-              <div class="showcase-card__media">
-                <span class="showcase-card__badge showcase-card__badge--service" data-i18n="home.catalogue.badgeService">Service</span>
-                <img src="images/arts%20design.jpeg" alt="Graphic design and branding" loading="lazy">
-              </div>
-              <h3 data-i18n="products.design.title">Graphic Design &amp; Branding</h3>
-            </a>
-            <a href="products.html#events" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/meetings.jpeg" alt="Event branding and setup" loading="lazy">
-              </div>
-              <h3 data-i18n="products.events.title">Event Branding &amp; Setup</h3>
-            </a>
+    <section class="home-hero" id="homeHero">
+      <div class="container home-hero__grid">
+        <div class="home-hero__copy reveal">
+          <p class="home-hero__label" data-i18n="home.simple.label">Professional Printing &amp; Branding · Kigali</p>
+          <h1 class="home-hero__title" data-i18n="home.simple.title">Business Cards, Banners, T-Shirts &amp; Event Branding</h1>
+          <p class="home-hero__text" data-i18n="home.simple.lead">Fresh Print is a full-service print studio in Kigali. We design and produce marketing materials, signage, apparel, and complete event branding for businesses, NGOs, schools, and conferences across Rwanda.</p>
+          <div class="home-hero__actions">
+            <a href="contact.html#quote" class="btn btn--primary" data-i18n="cta.getFreeQuote">Get a Free Quote</a>
+            <a href="products.html" class="btn btn--outline-dark" data-i18n="home.simple.viewProducts">View Products &amp; Prices</a>
           </div>
-          <button type="button" class="showcase__float-next" data-showcase-next aria-label="Scroll right">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
+          <ul class="home-hero__list">
+            <li data-i18n="home.simple.point1">Same-day rush on select products</li>
+            <li data-i18n="home.simple.point2">Starting prices in RWF — switch to USD in the header</li>
+            <li data-i18n="home.simple.point3">Delivery across Rwanda · KN 87 St, Kigali</li>
+          </ul>
         </div>
-        <div class="container showcase__controls">
-          <div class="showcase__nav">
-            <button type="button" class="showcase__arrow showcase__arrow--prev" data-showcase-prev aria-label="Scroll left">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <div class="showcase__scrollbar" aria-hidden="true"><div class="showcase__scrollbar-thumb"></div></div>
-            <button type="button" class="showcase__arrow showcase__arrow--next" data-showcase-next aria-label="Scroll right">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="container showcase__cta reveal">
-        <a href="products.html" class="btn btn--dark" data-i18n="home.catalogue.cta">View all products &amp; services</a>
+        <figure class="home-hero__media reveal">
+          <img src="images/meetings1.jpeg" alt="Conference and event branding printed by Fresh Print" width="640" height="480" fetchpriority="high">
+        </figure>
       </div>
     </section>
 
-    <section class="home-deals page-content page-content--gray" id="home-deals">
+    <section class="home-catalog">
       <div class="container">
-        <div class="section-header reveal">
-          <p class="section-header__eyebrow">Current Offers</p>
-          <h2 class="section-header__title">Deals &amp; Package Pricing</h2>
-          <p class="section-header__desc">Event packages and bulk savings — prices in RWF with USD toggle in the top bar.</p>
-        </div>
-        <div class="deals__grid">
-          <article class="price-card price-card--featured reveal">
-            <div class="price-card__body">
-              <span class="price-card__badge">Save 25%</span>
-              <h3>Expo Booth Kit</h3>
-              <p>Banner, roll-up, 500 flyers &amp; 10 staff T-shirts — one fixed price.</p>
-              <div class="price-card__price" data-i18n="home.deals.expoPrice">25% OFF</div>
-              <a href="deals.html#booth-kit" class="btn btn--primary">View Deal</a>
-            </div>
-          </article>
-          <article class="price-card reveal">
-            <div class="price-card__body">
-              <span class="price-card__badge">15% Off</span>
-              <h3>Event Printing</h3>
-              <p>Attending or hosting an event in Kigali? Save on your full print order.</p>
-              <div class="price-card__price">15% OFF</div>
-              <a href="deals.html" class="btn btn--primary">See All Deals</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="showcase showcase--industries page-content">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="section-header__eyebrow" data-i18n="home.industries.eyebrow">By Industry</p>
-          <h2 class="section-header__title" data-i18n="home.industries.title">Browse by Industry</h2>
-          <p class="section-header__desc" data-i18n="home.industries.desc">Not sure where to start? Choose what you need it for and we'll point you to the right products and services.</p>
-        </div>
-      </div>
-      <div class="showcase__carousel reveal">
-        <div class="showcase__track-wrap">
-          <div class="showcase__track" data-showcase tabindex="0">
-            <a href="products.html#industry-events" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/meetings1.jpeg" alt="Conferences and events printing" loading="lazy">
-              </div>
-              <h3 data-i18n="industry.conferencesEvents">Conferences &amp; Events</h3>
-            </a>
-            <a href="products.html#industry-corporate" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/branding.jpeg" alt="Office and corporate branding" loading="lazy">
-              </div>
-              <h3 data-i18n="industry.officeCorporate">Office &amp; Corporate</h3>
-            </a>
-            <a href="products.html" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/bags%202.jpeg" alt="Retail and hospitality printing" loading="lazy">
-              </div>
-              <h3 data-i18n="industry.retailHospitality">Retail &amp; Hospitality</h3>
-            </a>
-            <a href="products.html" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/books1.jpeg" alt="Schools, NGOs and government printing" loading="lazy">
-              </div>
-              <h3 data-i18n="industry.schoolsNgosGov">Schools, NGOs &amp; Gov</h3>
-            </a>
-            <a href="products.html" class="showcase-card">
-              <div class="showcase-card__media">
-                <img src="images/branding2.jpeg" alt="Startups and small business branding" loading="lazy">
-              </div>
-              <h3 data-i18n="industry.startupsSmallBiz">Startups &amp; Small Biz</h3>
-            </a>
-          </div>
-          <button type="button" class="showcase__float-next" data-showcase-next aria-label="Scroll right">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-        </div>
-        <div class="container showcase__controls">
-          <div class="showcase__nav">
-            <button type="button" class="showcase__arrow showcase__arrow--prev" data-showcase-prev aria-label="Scroll left">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <div class="showcase__scrollbar" aria-hidden="true"><div class="showcase__scrollbar-thumb"></div></div>
-            <button type="button" class="showcase__arrow showcase__arrow--next" data-showcase-next aria-label="Scroll right">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="container showcase__cta reveal">
-        <a href="products.html#industries" class="btn btn--outline-dark" data-i18n="home.industries.cta">View all industries →</a>
-      </div>
-    </section>
-
-    <section class="home-links">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="section-header__eyebrow">Explore</p>
-          <h2 class="section-header__title">Everything You Need</h2>
-        </div>
-        <div class="home-links__grid">
-          <a href="products.html" class="home-link-card reveal reveal-delay-1">
-            <div class="home-link-card__media">
-              <img src="assets/home-link-services.png" alt="" loading="lazy">
-            </div>
-            <div class="home-link-card__body">
-              <h3>Products</h3>
-              <p>Full catalogue with RWF pricing</p>
-            </div>
+        <header class="home-section-head reveal">
+          <h2 data-i18n="home.catalogue.title">Printing &amp; Branding for Every Need</h2>
+          <p data-i18n="home.catalogue.desc">Tap a category to see options and starting prices. Everything is printed in-house at our Kigali studio.</p>
+        </header>
+        <div class="home-catalog__grid">
+          <a href="products.html#marketing" class="home-catalog__item reveal">
+            <figure class="home-catalog__media"><img src="images/postcard.jpeg" alt="Flyers, brochures and posters" loading="lazy"></figure>
+            <h3 data-i18n="products.marketing.title">Flyers, Brochures &amp; Posters</h3>
           </a>
-          <a href="deals.html" class="home-link-card reveal reveal-delay-2">
-            <div class="home-link-card__media">
-              <img src="assets/service-rush.png" alt="" loading="lazy">
-            </div>
-            <div class="home-link-card__body">
-              <h3>Deals</h3>
-              <p>Event packages &amp; bulk savings</p>
-            </div>
+          <a href="products.html#stickers" class="home-catalog__item reveal">
+            <figure class="home-catalog__media"><img src="images/branding1.%20.jpeg" alt="Signs and signage" loading="lazy"></figure>
+            <h3 data-i18n="home.catalogue.signsTitle">Signs, Displays &amp; Signage</h3>
           </a>
-          <a href="about.html" class="home-link-card reveal reveal-delay-3">
-            <div class="home-link-card__media">
-              <img src="assets/home-link-about.png" alt="" loading="lazy">
-            </div>
-            <div class="home-link-card__body">
-              <h3>About Us</h3>
-              <p>Our story &amp; commitment to quality</p>
-            </div>
+          <a href="products.html#design" class="home-catalog__item reveal">
+            <figure class="home-catalog__media"><img src="images/arts%20design.jpeg" alt="Graphic design services" loading="lazy"></figure>
+            <h3 data-i18n="products.design.title">Graphic Design &amp; Branding</h3>
           </a>
-          <a href="blog.html" class="home-link-card reveal reveal-delay-4">
-            <div class="home-link-card__media">
-              <img src="assets/home-link-blog.png" alt="" loading="lazy">
-            </div>
-            <div class="home-link-card__body">
-              <h3>Blog</h3>
-              <p>Tips, trends &amp; printing insights</p>
-            </div>
+          <a href="products.html#events" class="home-catalog__item reveal">
+            <figure class="home-catalog__media"><img src="images/meetings.jpeg" alt="Event branding and setup" loading="lazy"></figure>
+            <h3 data-i18n="products.events.title">Event Branding &amp; Setup</h3>
           </a>
         </div>
+        <p class="home-catalog__link reveal"><a href="products.html" data-i18n="home.catalogue.cta">View all products &amp; services →</a></p>
       </div>
     </section>
 
-    <section class="work-showcase page-content">
+    <section class="home-bar">
+      <div class="container home-bar__grid">
+        <div class="home-bar__item reveal"><strong>10K+</strong><span data-i18n="stat.projectsDelivered">Projects Delivered</span></div>
+        <div class="home-bar__item reveal"><strong>24hr</strong><span data-i18n="stat.rushTurnaround">Rush Turnaround</span></div>
+        <div class="home-bar__item reveal"><strong>100%</strong><span data-i18n="stat.satisfactionGuarantee">Satisfaction Guarantee</span></div>
+        <div class="home-bar__item reveal"><strong>15+</strong><span data-i18n="stat.yearsExperience">Years Experience</span></div>
+      </div>
+    </section>
+
+    <section class="home-work">
       <div class="container">
-        <div class="section-header reveal">
-          <p class="section-header__eyebrow" data-i18n="home.work.eyebrow">Our Work</p>
-          <h2 class="section-header__title" data-i18n="home.work.title">Real Print Work From Our Studio</h2>
-          <p class="section-header__desc" data-i18n="home.work.desc">A glimpse of the business cards, banners, signage and branding we produce for clients across Rwanda and beyond.</p>
-        </div>
-        <div class="work-mosaic reveal">
-          <figure class="work-mosaic__item work-mosaic__item--wide">
-            <img src="images/T-shirt%201.jpeg" alt="Custom event T-shirts printed in bulk" loading="lazy">
-          </figure>
-          <figure class="work-mosaic__item">
-            <img src="images/T-shirt%202.jpeg" alt="Branded T-shirt screen printing" loading="lazy">
-          </figure>
-          <figure class="work-mosaic__item">
-            <img src="images/T-shirt3.jpeg" alt="Festival T-shirts with full-colour print" loading="lazy">
-          </figure>
-          <figure class="work-mosaic__item">
-            <img src="images/brandings.jpeg" alt="Business cards, stationery and branded display printing" loading="lazy">
-          </figure>
-          <figure class="work-mosaic__item">
-            <img src="images/meetings1.jpeg" alt="Conference registration signage and event branding" loading="lazy">
-          </figure>
-          <figure class="work-mosaic__item">
-            <img src="images/key%20holders.jpeg" alt="Branded promotional key holders" loading="lazy">
-          </figure>
-          <figure class="work-mosaic__item">
-            <img src="images/arts%20design1.jpeg" alt="Wedding and event signage and branding" loading="lazy">
-          </figure>
+        <header class="home-section-head reveal">
+          <p class="home-section-head__eyebrow" data-i18n="home.work.eyebrow">Our Work</p>
+          <h2 data-i18n="home.work.title">Real Print Work From Our Studio</h2>
+          <p data-i18n="home.work.desc">Recent projects for clients across Rwanda — business cards, apparel, signage, and event branding.</p>
+        </header>
+        <div class="home-work__grid reveal">
+          <figure><img src="images/T-shirt%201.jpeg" alt="Custom event T-shirts" loading="lazy"></figure>
+          <figure><img src="images/brandings.jpeg" alt="Business cards and stationery" loading="lazy"></figure>
+          <figure><img src="images/meetings1.jpeg" alt="Conference signage" loading="lazy"></figure>
+          <figure><img src="images/umbrella%201.jpeg" alt="Branded umbrellas" loading="lazy"></figure>
+          <figure><img src="images/arts%20design1.jpeg" alt="Wedding and event branding" loading="lazy"></figure>
+          <figure><img src="images/key%20holders.jpeg" alt="Promotional key holders" loading="lazy"></figure>
         </div>
       </div>
     </section>

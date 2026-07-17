@@ -150,8 +150,8 @@
 
     const page = document.body.dataset.page;
     if (page === 'home') {
-      const hero = document.getElementById('heroSlider');
-      if (hero) hero.insertAdjacentElement('afterend', bottomTicker);
+      const anchor = document.getElementById('homeHero') || document.getElementById('heroSlider');
+      if (anchor) anchor.insertAdjacentElement('afterend', bottomTicker);
     } else {
       const banner = document.querySelector('.page-banner');
       if (banner) banner.insertAdjacentElement('afterend', bottomTicker);
