@@ -96,7 +96,7 @@ body[data-page="home"] .home-work {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--yellow);
+  color: var(--white);
   margin-bottom: 0.85rem;
 }
 
