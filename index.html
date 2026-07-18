@@ -9,9 +9,9 @@
   <link rel="apple-touch-icon" href="assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/home-simple.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=207">
+  <link rel="stylesheet" href="css/home-simple.css?v=7">
 </head>
 <body data-page="home">
 
@@ -42,25 +42,22 @@
   </header>
 
   <main>
-    <section class="home-hero" id="homeHero">
-      <div class="container home-hero__grid">
-        <div class="home-hero__copy reveal">
-          <p class="home-hero__label" data-i18n="home.simple.label">Professional Printing &amp; Branding · Kigali and beyond</p>
-          <h1 class="home-hero__title" data-i18n="home.simple.title">Business Cards, Banners, T-Shirts &amp; Event Branding</h1>
-          <p class="home-hero__text" data-i18n="home.simple.lead">Fresh Print is a full-service print studio in Kigali. We design and produce marketing materials, signage, apparel, and complete event branding for businesses, NGOs, schools, and conferences across Rwanda.</p>
-          <div class="home-hero__actions">
-            <a href="contact.html#quote" class="btn btn--primary" data-i18n="cta.getFreeQuote">Get a Free Quote</a>
-            <a href="products.html" class="btn btn--outline-dark" data-i18n="home.simple.viewProducts">View Products &amp; Prices</a>
-          </div>
-          <ul class="home-hero__list">
-            <li data-i18n="home.simple.point1">Same-day rush on select products</li>
-            <li data-i18n="home.simple.point2">Starting prices in RWF — switch to USD in the header</li>
-            <li data-i18n="home.simple.point3">Delivery across Rwanda · KN 87 St, Kigali</li>
-          </ul>
+    <section class="home-hero home-hero--banner" id="homeHero">
+      <div class="home-hero__bg" style="background-image: url('assets/banner-services.png')"></div>
+      <div class="home-hero__shapes" aria-hidden="true">
+        <span class="home-hero__shape home-hero__shape--1"></span>
+        <span class="home-hero__shape home-hero__shape--2"></span>
+        <span class="home-hero__shape home-hero__shape--3"></span>
+      </div>
+      <div class="home-hero__overlay"></div>
+      <div class="container home-hero__content reveal">
+        <p class="home-hero__label" data-i18n="home.simple.label">Professional Printing &amp; Branding · Kigali and beyond</p>
+        <h1 class="home-hero__title" data-i18n="home.simple.title">Need Printing? You've Come to the Right Place.</h1>
+        <p class="home-hero__text" data-i18n="home.simple.lead">From business cards and banners to signage, apparel and event branding — Fresh Print turns your ideas into premium printed work, fast, right here in Kigali.</p>
+        <div class="home-hero__actions">
+          <a href="contact.html#quote" class="btn btn--primary" data-i18n="cta.getFreeQuote">Get a Free Quote</a>
+          <a href="products.html" class="btn btn--outline" data-i18n="home.simple.viewProducts">View Products &amp; Prices</a>
         </div>
-        <figure class="home-hero__media reveal">
-          <img src="images/meetings1.jpeg" alt="Conference and event branding printed by Fresh Print" width="640" height="480" fetchpriority="high">
-        </figure>
       </div>
     </section>
 
@@ -68,27 +65,47 @@
       <div class="container">
         <header class="home-section-head reveal">
           <h2 data-i18n="home.catalogue.title">Printing &amp; Branding for Every Need</h2>
-          <p data-i18n="home.catalogue.desc">Tap a category to see options and starting prices. Everything is printed in-house at our Kigali studio.</p>
+          <p data-i18n="home.catalogue.desc">Click a category image to swipe through related samples.</p>
         </header>
-        <div class="home-catalog__grid">
-          <a href="products.html#marketing" class="home-catalog__item reveal">
-            <figure class="home-catalog__media"><img src="images/postcard.jpeg" alt="Flyers, brochures and posters" loading="lazy"></figure>
-            <h3 data-i18n="products.marketing.title">Flyers, Brochures &amp; Posters</h3>
-          </a>
-          <a href="products.html#stickers" class="home-catalog__item reveal">
-            <figure class="home-catalog__media"><img src="images/branding1.%20.jpeg" alt="Signs and signage" loading="lazy"></figure>
-            <h3 data-i18n="home.catalogue.signsTitle">Signs, Displays &amp; Signage</h3>
-          </a>
-          <a href="products.html#design" class="home-catalog__item reveal">
-            <figure class="home-catalog__media"><img src="images/arts%20design.jpeg" alt="Graphic design services" loading="lazy"></figure>
-            <h3 data-i18n="products.design.title">Graphic Design &amp; Branding</h3>
-          </a>
-          <a href="products.html#events" class="home-catalog__item reveal">
-            <figure class="home-catalog__media"><img src="images/meetings.jpeg" alt="Event branding and setup" loading="lazy"></figure>
-            <h3 data-i18n="products.events.title">Event Branding &amp; Setup</h3>
-          </a>
+        <div class="home-catalog__stage">
+          <div class="home-catalog__grid" id="homeCatalogGrid">
+            <button type="button" class="home-catalog__item reveal" data-catalog="business-cards">
+              <figure class="home-catalog__media"><img src="images/business%20cards.png" alt="Business cards printing" loading="lazy"></figure>
+              <h3 data-i18n="products.businessCards.title">Business Cards &amp; Stationery</h3>
+            </button>
+            <button type="button" class="home-catalog__item reveal" data-catalog="banners">
+              <figure class="home-catalog__media"><img src="images/work-banner-signage.jpeg" alt="Banners and large format printing" loading="lazy"></figure>
+              <h3 data-i18n="products.banners.title">Banners &amp; Large Format</h3>
+            </button>
+            <button type="button" class="home-catalog__item reveal" data-catalog="apparel">
+              <figure class="home-catalog__media"><img src="images/apparel%201.png" alt="Custom apparel printing" loading="lazy"></figure>
+              <h3 data-i18n="products.apparel.title">Apparel &amp; T-Shirt Printing</h3>
+            </button>
+            <button type="button" class="home-catalog__item reveal" data-catalog="events">
+              <figure class="home-catalog__media"><img src="images/events%20and%20conference..jpeg" alt="Events and conference branding" loading="lazy"></figure>
+              <h3 data-i18n="home.catalogue.eventsConference">Events &amp; Conference</h3>
+            </button>
+          </div>
         </div>
         <p class="home-catalog__link reveal"><a href="products.html" data-i18n="home.catalogue.cta">View all products &amp; services →</a></p>
+      </div>
+
+      <div class="home-catalog-lightbox" id="homeCatalogLightbox" hidden aria-hidden="true">
+        <div class="home-catalog-lightbox__backdrop" data-catalog-close tabindex="-1"></div>
+        <div class="home-catalog-lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="homeCatalogLightboxTitle">
+          <button type="button" class="home-catalog-lightbox__close" data-catalog-close aria-label="Close">&times;</button>
+          <h3 class="home-catalog-lightbox__title" id="homeCatalogLightboxTitle"></h3>
+          <div class="home-catalog-lightbox__carousel">
+            <button type="button" class="home-catalog-lightbox__nav home-catalog-lightbox__nav--prev" id="homeCatalogPrev" aria-label="Previous image">&lsaquo;</button>
+            <div class="home-catalog-lightbox__viewport" id="homeCatalogViewport">
+              <div class="home-catalog-lightbox__track" id="homeCatalogTrack"></div>
+            </div>
+            <button type="button" class="home-catalog-lightbox__nav home-catalog-lightbox__nav--next" id="homeCatalogNext" aria-label="Next image">&rsaquo;</button>
+          </div>
+          <p class="home-catalog-lightbox__counter" id="homeCatalogCounter" aria-live="polite"></p>
+          <p class="home-catalog-lightbox__hint" data-i18n="home.catalogue.swipeHint">Swipe or use arrows to browse</p>
+          <a href="products.html" class="home-catalog-lightbox__cta" id="homeCatalogLightboxLink" data-i18n="home.catalogue.viewCategory">View products &amp; get a quote &rarr;</a>
+        </div>
       </div>
     </section>
 
@@ -215,6 +232,7 @@
 
   <script src="js/i18n-content.js" defer></script>
   <script src="js/site-features.js" defer></script>
+  <script src="js/home-catalog.js?v=2" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/footer-beams.js" defer></script>
 </body>
