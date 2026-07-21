@@ -8,60 +8,143 @@
 
   const CATALOG = {
     'business-cards': {
-      titleKey: 'products.businessCards.title',
+      titleKey: 'home.catalog.businessCards',
       title: 'Business Cards',
-      productLink: 'products.html#business-cards',
-      cover: 'images/business cards.png',
-      coverAlt: 'Business cards printing',
+      productLink: 'contact.html#quote',
+      cover: 'images/business card 1.jpg',
+      coverAlt: 'Business cards',
       images: [
-        { src: 'images/business cards 1.jpeg', alt: 'Premium business cards' },
-        { src: 'images/business cards..jpeg', alt: 'Business card samples' },
-        { src: 'images/brandings.jpeg', alt: 'Branded stationery' },
-        { src: 'images/postcard.jpeg', alt: 'Postcards and flyers' },
+        { src: 'images/business card 2.jpg', alt: 'Business cards sample 2' },
+        { src: 'images/business card 3.jpg', alt: 'Business cards sample 3' },
+        { src: 'images/business card 4.jpg', alt: 'Business cards sample 4' },
+        { src: 'images/business card 8.jpg', alt: 'Business cards sample 8' },
+        { src: 'images/business card7.jpg', alt: 'Business cards sample 7' },
+        { src: 'images/business card.jpg', alt: 'Business cards' },
       ],
     },
-    banners: {
-      titleKey: 'products.banners.title',
-      title: 'Banners',
-      productLink: 'products.html#banners',
-      cover: 'images/work-banner-signage.jpeg',
-      coverAlt: 'Large format banners and signage',
+    'custom-bags': {
+      titleKey: 'home.catalog.customBags',
+      title: 'Custom Bags',
+      productLink: 'contact.html#quote',
+      cover: 'images/custom bag1.jpg',
+      coverAlt: 'Custom branded bags',
       images: [
-        { src: 'images/branding.jpeg', alt: 'Branded banner display' },
-        { src: 'images/branding1. .jpeg', alt: 'Roll-up banner' },
-        { src: 'images/branding2.jpeg', alt: 'Event signage' },
-        { src: 'images/umbrella 1.jpeg', alt: 'Branded umbrellas' },
-        { src: 'images/package 1.png', alt: 'Banner package' },
-        { src: 'images/package 2.png', alt: 'Display package' },
-        { src: 'images/package 3.jpeg', alt: 'Booth branding' },
-        { src: 'images/package 4.jpeg', alt: 'Large format print' },
+        { src: 'images/custom bag 2.jpg', alt: 'Custom bag 2' },
+        { src: 'images/custom bag 3.jpg', alt: 'Custom bag 3' },
+        { src: 'images/custom bag 4.jpg', alt: 'Custom bag 4' },
+        { src: 'images/custom bag 5.jpg', alt: 'Custom bag 5' },
+        { src: 'images/custom bag6.jpg', alt: 'Custom bag 6' },
+        { src: 'images/custom bag 7.jpg', alt: 'Custom bag 7' },
+        { src: 'images/custom bag 8.jpg', alt: 'Custom bag 8' },
+        { src: 'images/custom bag 9.jpg', alt: 'Custom bag 9' },
       ],
     },
-    apparel: {
-      titleKey: 'products.apparel.title',
-      title: 'Apparel',
-      productLink: 'products.html#apparel',
-      cover: 'images/apparel 1.png',
-      coverAlt: 'Custom apparel printing',
+    'drink-wares': {
+      titleKey: 'home.catalog.drinkWares',
+      title: 'Custom Branded Drink Wares',
+      productLink: 'contact.html#quote',
+      cover: 'images/drink wares 1.jpg',
+      coverAlt: 'Custom branded drink wares',
       images: [
-        { src: 'images/apparel 2.png', alt: 'Branded T-shirts' },
-        { src: 'images/apparel 3.jpeg', alt: 'Event apparel' },
-        { src: 'images/apparel 4.jpeg', alt: 'Staff uniforms' },
-        { src: 'images/apparel 5.jpeg', alt: 'Custom hoodies' },
-        { src: 'images/apparel 6.png', alt: 'Team wear' },
-        { src: 'images/T-shirt3.jpeg', alt: 'T-shirt printing' },
-        { src: 'images/hat1.jpeg', alt: 'Branded caps' },
+        { src: 'images/drink wares 2.jpg', alt: 'Drink ware 2' },
+        { src: 'images/drink wares 3.jpg', alt: 'Drink ware 3' },
+        { src: 'images/drink wares 4.jpg', alt: 'Drink ware 4' },
+        { src: 'images/drink wares 5.jpg', alt: 'Drink ware 5' },
       ],
     },
-    events: {
-      titleKey: 'home.catalogue.eventsConference',
-      title: 'Events & Conference',
-      productLink: 'products.html#events',
-      cover: 'images/events and conference..jpeg',
-      coverAlt: 'Events and conference branding',
+    garments: {
+      titleKey: 'home.catalog.garments',
+      title: 'Garments and Work Wears',
+      productLink: 'contact.html#quote',
+      cover: 'images/garments and work wears 1.jpg',
+      coverAlt: 'Garments and work wear',
       images: [
-        { src: 'images/events and conference 1.jpeg', alt: 'Conference setup' },
-        { src: 'images/events and conference 2.jpeg', alt: 'Event branding' },
+        { src: 'images/garments and work wears 4.jpg', alt: 'Work wear 4' },
+        { src: 'images/garments and work wears 5.jpg', alt: 'Work wear 5' },
+        { src: 'images/garmentss and work wears 3.jpg', alt: 'Work wear 3' },
+      ],
+    },
+    stationary: {
+      titleKey: 'home.catalog.stationary',
+      title: 'Stationery',
+      productLink: 'contact.html#quote',
+      cover: 'images/stationary 1.jpg',
+      coverAlt: 'Stationery printing',
+      images: [
+        { src: 'images/stationary 2.jpg', alt: 'Stationery 2' },
+        { src: 'images/stationary 3.jpg', alt: 'Stationery 3' },
+        { src: 'images/stationary 4.jpg', alt: 'Stationery 4' },
+        { src: 'images/stationary 5.jpg', alt: 'Stationery 5' },
+      ],
+    },
+    'large-format': {
+      titleKey: 'home.catalog.largeFormat',
+      title: 'Large Format Printing',
+      productLink: 'contact.html#quote',
+      cover: 'images/large format printing 1.jpg',
+      coverAlt: 'Large format printing',
+      images: [
+        { src: 'images/large format printing 2.jpg', alt: 'Large format 2' },
+        { src: 'images/large format printing 3.jpg', alt: 'Large format 3' },
+        { src: 'images/work-banner-signage.jpeg', alt: 'Banner and signage' },
+      ],
+    },
+    electronics: {
+      titleKey: 'home.catalog.electronics',
+      title: 'Electronics and Accessories',
+      productLink: 'contact.html#quote',
+      cover: 'images/Electronic and accessories 1.jpg',
+      coverAlt: 'Electronics and accessories',
+      images: [
+        { src: 'images/Electronic and accessories 2.jpg', alt: 'Electronics 2' },
+        { src: 'images/Electronic and accessories 3.jpg', alt: 'Electronics 3' },
+        { src: 'images/Electronic and accessories 4.jpg', alt: 'Electronics 4' },
+        { src: 'images/Electronic and accessories 5.jpg', alt: 'Electronics 5' },
+      ],
+    },
+    giveaways: {
+      titleKey: 'home.catalog.giveaways',
+      title: 'Other Giveaways',
+      productLink: 'contact.html#quote',
+      cover: 'images/give aways1.jpg',
+      coverAlt: 'Promotional giveaways',
+      images: [
+        { src: 'images/give aways 2.jpg', alt: 'Giveaway 2' },
+        { src: 'images/give aways 4.jpg', alt: 'Giveaway 4' },
+        { src: 'images/give aways 6.jpg', alt: 'Giveaway 6' },
+        { src: 'images/give aways 7.jpg', alt: 'Giveaway 7' },
+        { src: 'images/give aways 8.jpg', alt: 'Giveaway 8' },
+        { src: 'images/give aways 9.jpg', alt: 'Giveaway 9' },
+        { src: 'images/give aways3.jpg', alt: 'Giveaway 3' },
+        { src: 'images/give aways.jpg', alt: 'Giveaways' },
+        { src: 'images/key holders.jpeg', alt: 'Promotional key holders' },
+      ],
+    },
+    posters: {
+      titleKey: 'home.catalog.posters',
+      title: 'Posters, Photo & Frame',
+      productLink: 'contact.html#quote',
+      cover: 'images/arts design.jpeg',
+      coverAlt: 'Posters, photo and frame',
+      images: [
+        { src: 'images/arts design1.jpeg', alt: 'Poster and design 2' },
+        { src: 'images/postcard.jpeg', alt: 'Posters and postcards' },
+        { src: 'images/work-flyers-brochures.jpeg', alt: 'Posters and flyers' },
+        { src: 'images/books.jpeg', alt: 'Photo books' },
+        { src: 'images/books1.jpeg', alt: 'Framed photo prints' },
+      ],
+    },
+    'corporate-events': {
+      titleKey: 'home.catalog.corporateEvents',
+      title: 'Corporate Event and Display',
+      productLink: 'contact.html#quote',
+      cover: 'images/coporate event and display 1.jpg',
+      coverAlt: 'Corporate event and display',
+      images: [
+        { src: 'images/coporate event and display 3.jpg', alt: 'Corporate display 3' },
+        { src: 'images/coporate event and display 4.jpg', alt: 'Corporate display 4' },
+        { src: 'images/coporate event and display 5.jpg', alt: 'Corporate display 5' },
+        { src: 'images/corporate event and display 5.jpg', alt: 'Corporate event setup' },
       ],
     },
   };
@@ -91,7 +174,8 @@
   let slides = [];
   let currentIndex = 0;
   let touchStartX = 0;
-  let touchDeltaX = 0;
+  let touchStartY = 0;
+  let touchMoved = false;
 
   function getCategoryTitle(id) {
     const cat = CATALOG[id];
@@ -199,7 +283,8 @@
     'touchstart',
     (event) => {
       touchStartX = event.changedTouches[0].screenX;
-      touchDeltaX = 0;
+      touchStartY = event.changedTouches[0].screenY;
+      touchMoved = false;
       track.style.transition = 'none';
     },
     { passive: true }
@@ -208,8 +293,10 @@
   viewport.addEventListener(
     'touchmove',
     (event) => {
-      touchDeltaX = event.changedTouches[0].screenX - touchStartX;
-      const offset = -currentIndex * 100 + (touchDeltaX / viewport.offsetWidth) * 100;
+      const dx = event.changedTouches[0].screenX - touchStartX;
+      const dy = event.changedTouches[0].screenY - touchStartY;
+      if (Math.abs(dx) > 8 || Math.abs(dy) > 8) touchMoved = true;
+      const offset = -currentIndex * 100 + (dx / viewport.offsetWidth) * 100;
       track.style.transform = `translateX(${offset}%)`;
     },
     { passive: true }
@@ -219,6 +306,10 @@
     'touchend',
     (event) => {
       const delta = event.changedTouches[0].screenX - touchStartX;
+      if (!touchMoved && Math.abs(delta) < 12) {
+        closeLightbox();
+        return;
+      }
       if (Math.abs(delta) > 50) {
         goTo(delta < 0 ? currentIndex + 1 : currentIndex - 1);
       } else {

@@ -1,11 +1,9 @@
 /**
- * Fresh Print — Language (EN/FR), currency, site search
+ * Fresh Print — Language (EN/FR), site search
  * Requires js/i18n-content.js loaded first.
  */
 (function () {
   'use strict';
-
-  const RWF_TO_USD = 1 / 1300;
 
   const EXTRA_I18N = {
     en: {
@@ -16,8 +14,6 @@
       'search.empty': 'No results found. Try "business cards" or "banners".',
       'search.title': 'Search Fresh Print',
       'search.close': 'Close search',
-      'currency.rwf': 'RWF',
-      'currency.usd': 'USD',
       'form.contact.sent': 'Sent! We\'ll be in touch.',
       'form.newsletter.subscribed': 'Subscribed!',
       'ticker.top.aria': 'Announcements',
@@ -31,8 +27,6 @@
       'search.empty': 'Aucun résultat. Essayez « cartes de visite » ou « bannières ».',
       'search.title': 'Rechercher Fresh Print',
       'search.close': 'Fermer la recherche',
-      'currency.rwf': 'RWF',
-      'currency.usd': 'USD',
       'form.contact.sent': 'Envoyé ! Nous vous recontacterons.',
       'form.newsletter.subscribed': 'Inscription confirmée !',
       'ticker.top.aria': 'Annonces',
@@ -41,28 +35,17 @@
   };
 
   const SEARCH_INDEX = [
-    { key: 'search.item.businessCards', url: 'products.html#business-cards', keywords: 'business cards stationery cards kigali' },
-    { key: 'search.item.banners', url: 'products.html#banners', keywords: 'banner signage large format roll-up' },
-    { key: 'search.item.marketing', url: 'products.html#marketing', keywords: 'flyers brochures posters marketing' },
-    { key: 'search.item.apparel', url: 'products.html#apparel', keywords: 'apparel t-shirt hoodie embroidery screen print' },
-    { key: 'search.item.promotional', url: 'products.html#promotional', keywords: 'mug bag promotional giveaway merchandise' },
-    { key: 'search.item.stickers', url: 'products.html#stickers', keywords: 'stickers labels decals' },
-    { key: 'search.item.packaging', url: 'products.html#packaging', keywords: 'packaging boxes custom print' },
-    { key: 'search.item.design', url: 'products.html#design', keywords: 'design branding logo artwork' },
-    { key: 'search.item.events', url: 'products.html#events', keywords: 'event conference expo booth badges' },
-    { key: 'search.item.copy', url: 'products.html#copy', keywords: 'copy printing binding documents' },
-    { key: 'search.item.photo', url: 'products.html#photo', keywords: 'photo canvas wall art print' },
-    { key: 'search.item.books', url: 'products.html#books', keywords: 'books calendars binding wire' },
-    { key: 'search.item.deals', url: 'deals.html', keywords: 'deals offers discount promo 15% expo' },
-    { key: 'search.item.boothKit', url: 'deals.html#booth-kit', keywords: 'expo booth kit banner t-shirt flyers package' },
+    { key: 'search.item.businessCards', url: 'index.html', keywords: 'business cards stationery cards kigali' },
+    { key: 'search.item.banners', url: 'index.html', keywords: 'banner signage large format roll-up' },
+    { key: 'search.item.marketing', url: 'index.html', keywords: 'flyers brochures posters marketing' },
+    { key: 'search.item.apparel', url: 'index.html', keywords: 'apparel t-shirt hoodie embroidery screen print garments work wear' },
+    { key: 'search.item.promotional', url: 'index.html', keywords: 'mug bag promotional giveaway merchandise drink ware' },
+    { key: 'search.item.events', url: 'index.html', keywords: 'event conference expo booth badges corporate display' },
+    { key: 'search.item.quote', url: 'contact.html#quote', keywords: 'quote estimate price free request' },
     { key: 'search.item.services', url: 'services.html', keywords: 'services printing rush turnaround' },
     { key: 'search.item.about', url: 'about.html', keywords: 'about story kigali rwanda fresh print' },
     { key: 'search.item.contact', url: 'contact.html', keywords: 'contact quote phone whatsapp email kn 87' },
     { key: 'search.item.faq', url: 'faq.html', keywords: 'faq questions help turnaround delivery payment' },
-    { key: 'search.item.blog', url: 'blog.html', keywords: 'blog tips design eco-friendly' },
-    { key: 'search.item.industryEvents', url: 'products.html#industry-events', keywords: 'conference event delegate exhibitor' },
-    { key: 'search.item.industryWeddings', url: 'products.html#industry-weddings', keywords: 'wedding invitation party' },
-    { key: 'search.item.industryCorporate', url: 'products.html#industry-corporate', keywords: 'corporate office branding stationery' },
   ];
 
   const SEARCH_LABELS = {
@@ -72,23 +55,12 @@
       'search.item.marketing': 'Flyers, Brochures & Marketing',
       'search.item.apparel': 'Custom Apparel & T-Shirts',
       'search.item.promotional': 'Promotional Items & Giveaways',
-      'search.item.stickers': 'Stickers & Labels',
-      'search.item.packaging': 'Packaging & Boxes',
-      'search.item.design': 'Graphic Design & Branding',
-      'search.item.events': 'Event Branding & Setup',
-      'search.item.copy': 'Copy & Document Services',
-      'search.item.photo': 'Photo, Canvas & Wall Décor',
-      'search.item.books': 'Books, Calendars & Binding',
-      'search.item.deals': 'Current Deals & Offers',
-      'search.item.boothKit': 'Expo Booth Kit — RWF 450,000',
+      'search.item.events': 'Corporate Events & Display',
+      'search.item.quote': 'Get a Free Quote',
       'search.item.services': 'Services Overview',
       'search.item.about': 'About Fresh Print',
       'search.item.contact': 'Contact & Quote',
       'search.item.faq': 'FAQs',
-      'search.item.blog': 'Blog — Printing Tips',
-      'search.item.industryEvents': 'Conferences & Events Industry',
-      'search.item.industryWeddings': 'Weddings & Parties',
-      'search.item.industryCorporate': 'Office & Corporate Branding',
     },
     fr: {
       'search.item.businessCards': 'Cartes de visite & papeterie',
@@ -96,30 +68,18 @@
       'search.item.marketing': 'Flyers, brochures & marketing',
       'search.item.apparel': 'Vêtements personnalisés & T-shirts',
       'search.item.promotional': 'Articles promotionnels & cadeaux',
-      'search.item.stickers': 'Autocollants & étiquettes',
-      'search.item.packaging': 'Emballages & boîtes',
-      'search.item.design': 'Design graphique & branding',
-      'search.item.events': 'Branding & stands événementiels',
-      'search.item.copy': 'Copie & services documentaires',
-      'search.item.photo': 'Photo, canvas & déco murale',
-      'search.item.books': 'Livres, calendriers & reliure',
-      'search.item.deals': 'Offres & promotions actuelles',
-      'search.item.boothKit': 'Kit stand expo — 450 000 RWF',
+      'search.item.events': 'Événements corporate & stands',
+      'search.item.quote': 'Devis gratuit',
       'search.item.services': 'Aperçu des services',
       'search.item.about': 'À propos de Fresh Print',
       'search.item.contact': 'Contact & devis',
       'search.item.faq': 'Questions fréquentes',
-      'search.item.blog': 'Blog — conseils d\'impression',
-      'search.item.industryEvents': 'Conférences & événements',
-      'search.item.industryWeddings': 'Mariages & fêtes',
-      'search.item.industryCorporate': 'Bureau & entreprise',
     },
   };
 
   let storedLang = localStorage.getItem('fp-lang') || 'en';
   if (storedLang !== 'en' && storedLang !== 'fr') storedLang = 'en';
   let currentLang = storedLang;
-  let currentCurrency = localStorage.getItem('fp-currency') || 'RWF';
 
   function getDict() {
     const base = window.FP_I18N || { en: {}, fr: {} };
@@ -132,14 +92,6 @@
   function t(key) {
     const dict = getDict();
     return dict[currentLang]?.[key] || dict.en[key] || key;
-  }
-
-  function formatPrice(rwf) {
-    if (currentCurrency === 'USD') {
-      const usd = Math.round(rwf * RWF_TO_USD);
-      return `USD ${usd.toLocaleString('en-US')}`;
-    }
-    return `RWF ${Number(rwf).toLocaleString('en-US')}`;
   }
 
   function applyBinding([selector, key, mode]) {
@@ -201,9 +153,6 @@
     document.querySelectorAll('.lang-switcher__btn').forEach((btn) => {
       btn.classList.toggle('active', btn.dataset.lang === currentLang);
     });
-    document.querySelectorAll('.currency-switcher__btn').forEach((btn) => {
-      btn.classList.toggle('active', btn.dataset.currency === currentCurrency);
-    });
 
     const searchInput = document.getElementById('siteSearchInput');
     if (searchInput) searchInput.placeholder = t('search.placeholder');
@@ -215,20 +164,6 @@
     if (searchClose) searchClose.setAttribute('aria-label', t('search.close'));
 
     document.dispatchEvent(new CustomEvent('fp:langchange', { detail: { lang: currentLang } }));
-  }
-
-  function applyCurrency() {
-    document.querySelectorAll('[data-rwf]').forEach((el) => {
-      const rwf = parseInt(el.dataset.rwf, 10);
-      if (!isNaN(rwf)) el.textContent = formatPrice(rwf);
-    });
-    document.querySelectorAll('[data-rwf-from][data-rwf-to]').forEach((el) => {
-      const from = parseInt(el.dataset.rwfFrom, 10);
-      const to = parseInt(el.dataset.rwfTo, 10);
-      if (!isNaN(from) && !isNaN(to)) {
-        el.textContent = `${formatPrice(from)} – ${formatPrice(to)}`;
-      }
-    });
   }
 
   function setLanguage(lang) {
@@ -255,10 +190,6 @@
             <button type="button" class="lang-switcher__btn active" data-lang="en">EN</button>
             <button type="button" class="lang-switcher__btn" data-lang="fr">FR</button>
           </div>
-          <div class="currency-switcher" id="currencySwitcher" role="group" aria-label="Currency">
-            <button type="button" class="currency-switcher__btn active" data-currency="RWF">RWF</button>
-            <button type="button" class="currency-switcher__btn" data-currency="USD">USD</button>
-          </div>
         </div>
       </div>
     `;
@@ -271,15 +202,6 @@
       const btn = e.target.closest('[data-lang]');
       if (!btn) return;
       setLanguage(btn.dataset.lang);
-    });
-
-    bar.querySelector('#currencySwitcher').addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-currency]');
-      if (!btn) return;
-      currentCurrency = btn.dataset.currency;
-      localStorage.setItem('fp-currency', currentCurrency);
-      applyCurrency();
-      applyTranslations();
     });
   }
 
@@ -386,11 +308,8 @@
   function initNavI18n() {
     const navMap = {
       home: 'nav.home',
-      products: 'nav.products',
       services: 'nav.services',
-      deals: 'nav.deals',
       about: 'nav.about',
-      blog: 'nav.blog',
       faq: 'nav.faq',
       contact: 'nav.contact',
     };
@@ -409,5 +328,4 @@
   initSearch();
   initNavI18n();
   applyTranslations();
-  applyCurrency();
 })();
