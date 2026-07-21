@@ -9,9 +9,9 @@
     en: {
       'nav.search': 'Search',
       'util.phone': 'Call',
-      'search.placeholder': 'Search products, services, pages…',
+      'search.placeholder': 'Search catalogue, services, pages…',
       'search.short': 'Search…',
-      'search.empty': 'No results found. Try "business cards" or "banners".',
+      'search.empty': 'No results found. Try "business cards", "bags", or "quote".',
       'search.title': 'Search Fresh Print',
       'search.close': 'Close search',
       'form.contact.sent': 'Sent! We\'ll be in touch.',
@@ -22,9 +22,9 @@
     fr: {
       'nav.search': 'Rechercher',
       'util.phone': 'Appeler',
-      'search.placeholder': 'Rechercher produits, services, pages…',
+      'search.placeholder': 'Rechercher catalogue, services, pages…',
       'search.short': 'Rechercher…',
-      'search.empty': 'Aucun résultat. Essayez « cartes de visite » ou « bannières ».',
+      'search.empty': 'Aucun résultat. Essayez « cartes de visite », « sacs » ou « devis ».',
       'search.title': 'Rechercher Fresh Print',
       'search.close': 'Fermer la recherche',
       'form.contact.sent': 'Envoyé ! Nous vous recontacterons.',
@@ -35,45 +35,46 @@
   };
 
   const SEARCH_INDEX = [
-    { key: 'search.item.businessCards', url: 'index.html', keywords: 'business cards stationery cards kigali' },
-    { key: 'search.item.banners', url: 'index.html', keywords: 'banner signage large format roll-up' },
-    { key: 'search.item.marketing', url: 'index.html', keywords: 'flyers brochures posters marketing' },
-    { key: 'search.item.apparel', url: 'index.html', keywords: 'apparel t-shirt hoodie embroidery screen print garments work wear' },
-    { key: 'search.item.promotional', url: 'index.html', keywords: 'mug bag promotional giveaway merchandise drink ware' },
-    { key: 'search.item.events', url: 'index.html', keywords: 'event conference expo booth badges corporate display' },
-    { key: 'search.item.quote', url: 'contact.html#quote', keywords: 'quote estimate price free request' },
-    { key: 'search.item.services', url: 'services.html', keywords: 'services printing rush turnaround' },
-    { key: 'search.item.about', url: 'about.html', keywords: 'about story kigali rwanda fresh print' },
-    { key: 'search.item.contact', url: 'contact.html', keywords: 'contact quote phone whatsapp email kn 87' },
-    { key: 'search.item.faq', url: 'faq.html', keywords: 'faq questions help turnaround delivery payment' },
+    { key: 'search.item.quote', url: 'contact.html#quote', keywords: 'quote estimate price free request devis', hintKey: 'search.hint.page' },
+    { key: 'search.item.home', url: 'index.html#homeCatalog', keywords: 'home homepage catalogue catalog categories', hintKey: 'search.hint.page' },
+    { key: 'nav.services', url: 'services.html', keywords: 'services printing solutions professional', hintKey: 'search.hint.page' },
+    { key: 'nav.contact', url: 'contact.html', keywords: 'contact phone whatsapp email kn 87 kigali location', hintKey: 'search.hint.page' },
+    { key: 'nav.about', url: 'about.html', keywords: 'about story team experience kigali rwanda', hintKey: 'search.hint.page' },
+    { key: 'nav.faq', url: 'faq.html', keywords: 'faq questions help delivery payment turnaround rush', hintKey: 'search.hint.page' },
+
+    { key: 'home.catalog.businessCards', url: 'index.html#homeCatalog', keywords: 'business cards cards stationery visit card kigali', hintKey: 'search.hint.catalog' },
+    { key: 'home.catalog.customBags', url: 'index.html#homeCatalog', keywords: 'bags tote custom bag branded shopping', hintKey: 'search.hint.catalog' },
+    { key: 'home.catalog.drinkWares', url: 'index.html#homeCatalog', keywords: 'drink ware mug cup bottle tumbler branded', hintKey: 'search.hint.catalog' },
+    { key: 'home.catalog.garments', url: 'index.html#homeCatalog', keywords: 'garments apparel t-shirt work wear uniform hoodie embroidery', hintKey: 'search.hint.catalog' },
+    { key: 'home.catalog.stationary', url: 'index.html#homeCatalog', keywords: 'stationery letterhead envelope notebook office print', hintKey: 'search.hint.catalog' },
+    { key: 'home.catalog.largeFormat', url: 'index.html#homeCatalog', keywords: 'large format banner signage poster roll-up outdoor', hintKey: 'search.hint.catalog' },
+    { key: 'home.catalog.electronics', url: 'index.html#homeCatalog', keywords: 'electronics accessories usb power bank tech branded', hintKey: 'search.hint.catalog' },
+    { key: 'home.catalog.giveaways', url: 'index.html#homeCatalog', keywords: 'giveaways promotional gift merchandise swag key holder', hintKey: 'search.hint.catalog' },
+    { key: 'home.catalog.posters', url: 'index.html#homeCatalog', keywords: 'posters photo frame canvas wall art print', hintKey: 'search.hint.catalog' },
+    { key: 'home.catalog.corporateEvents', url: 'index.html#homeCatalog', keywords: 'corporate event conference display expo booth branding', hintKey: 'search.hint.catalog' },
+
+    { key: 'services.card1.title', url: 'services.html', keywords: 'business cards foil spot uv premium stock', hintKey: 'search.hint.services' },
+    { key: 'services.card2.title', url: 'services.html', keywords: 'large format banner poster signage window graphics', hintKey: 'search.hint.services' },
+    { key: 'services.card3.title', url: 'services.html', keywords: 'marketing flyers brochures catalog direct mail', hintKey: 'search.hint.services' },
+    { key: 'services.card4.title', url: 'services.html', keywords: 'apparel t-shirt hoodie hat screen print embroidery', hintKey: 'search.hint.services' },
+    { key: 'services.card5.title', url: 'services.html', keywords: 'rush same-day next-day fast turnaround urgent', hintKey: 'search.hint.services' },
+    { key: 'services.card6.title', url: 'services.html', keywords: 'design support artwork file preparation in-house designer', hintKey: 'search.hint.services' },
   ];
 
   const SEARCH_LABELS = {
     en: {
-      'search.item.businessCards': 'Business Cards & Stationery',
-      'search.item.banners': 'Banners & Large Format',
-      'search.item.marketing': 'Flyers, Brochures & Marketing',
-      'search.item.apparel': 'Custom Apparel & T-Shirts',
-      'search.item.promotional': 'Promotional Items & Giveaways',
-      'search.item.events': 'Corporate Events & Display',
+      'search.item.home': 'Home — print catalogue',
       'search.item.quote': 'Get a Free Quote',
-      'search.item.services': 'Services Overview',
-      'search.item.about': 'About Fresh Print',
-      'search.item.contact': 'Contact & Quote',
-      'search.item.faq': 'FAQs',
+      'search.hint.catalog': 'Home catalogue',
+      'search.hint.services': 'On Services page',
+      'search.hint.page': 'Page',
     },
     fr: {
-      'search.item.businessCards': 'Cartes de visite & papeterie',
-      'search.item.banners': 'Bannières & grand format',
-      'search.item.marketing': 'Flyers, brochures & marketing',
-      'search.item.apparel': 'Vêtements personnalisés & T-shirts',
-      'search.item.promotional': 'Articles promotionnels & cadeaux',
-      'search.item.events': 'Événements corporate & stands',
+      'search.item.home': 'Accueil — catalogue',
       'search.item.quote': 'Devis gratuit',
-      'search.item.services': 'Aperçu des services',
-      'search.item.about': 'À propos de Fresh Print',
-      'search.item.contact': 'Contact & devis',
-      'search.item.faq': 'Questions fréquentes',
+      'search.hint.catalog': 'Catalogue accueil',
+      'search.hint.services': 'Page Services',
+      'search.hint.page': 'Page',
     },
   };
 
@@ -278,15 +279,18 @@
             const hay = `${title} ${item.keywords}`.toLowerCase();
             return hay.includes(q) || q.split(/\s+/).some((w) => w.length > 2 && hay.includes(w));
           })
-        : SEARCH_INDEX.slice(0, 8);
+        : SEARCH_INDEX.slice(0, 10);
 
       results.innerHTML = matches.length
-        ? matches.slice(0, 10).map((item) => `
+        ? matches.slice(0, 10).map((item) => {
+            const subtitle = item.hintKey ? t(item.hintKey) : '';
+            return `
             <li><a href="${item.url}" class="site-search__result">
               <strong>${t(item.key)}</strong>
-              <span>${item.keywords.split(' ').slice(0, 4).join(' · ')}</span>
+              ${subtitle ? `<span>${subtitle}</span>` : ''}
             </a></li>
-          `).join('')
+          `;
+          }).join('')
         : `<li class="site-search__empty">${t('search.empty')}</li>`;
     }
 
