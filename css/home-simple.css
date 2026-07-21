@@ -558,42 +558,6 @@ body.catalog-lightbox-open {
   }
 }
 
-/* ---- Homepage CTA — flat, no glass ---- */
-body[data-page="home"] .cta-strip {
-  padding: clamp(2.5rem, 5vw, 3.5rem) 0;
-  background: var(--green-dark);
-}
-
-body[data-page="home"] .cta-strip .container {
-  max-width: var(--container);
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  overflow: visible;
-}
-
-body[data-page="home"] .cta-strip .container::before,
-body[data-page="home"] .cta-strip .container::after {
-  display: none;
-}
-
-body[data-page="home"] .cta-strip h2,
-body[data-page="home"] .cta-strip p {
-  color: var(--white);
-}
-
-body[data-page="home"] .cta-strip .btn--outline {
-  border-color: var(--white);
-  color: var(--white);
-}
-
-body[data-page="home"] .cta-strip .btn--outline:hover {
-  background: var(--white);
-  color: var(--green-dark);
-  border-color: var(--white);
-}
-
 /* Bottom scrolling bar — solid green, white text (override cache) */
 .site-ticker--bottom {
   background: var(--green-dark) !important;
