@@ -2204,6 +2204,13 @@ ul { list-style: none; }
   filter: brightness(1.1);
 }
 
+.footer__brand .footer__logo {
+  width: 72px;
+  height: auto;
+  filter: none;
+  opacity: 1;
+}
+
 .footer__brand p {
   font-size: 0.85rem;
   margin-top: 0.5rem;
